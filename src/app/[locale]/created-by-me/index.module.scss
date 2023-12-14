@@ -1,16 +1,13 @@
 @import "../../../style/variables.module.scss";
 .listWrapper {
-  // max-width: 70vw;
-
-  @media screen and (max-width: 600px) {
-    max-width: none;
-  }
   .nav {
     display: flex;
+    gap: 1px;
+    margin-bottom: 4px;
+
     .navItem {
       height: 55px;
       background-color: $grey;
-      margin: 1px;
       flex-grow: 1;
       display: flex;
       justify-content: center;
@@ -22,31 +19,69 @@
   }
 
   .list {
-    &> *:not(:last-child) {
-  border-bottom: 1px solid $white; /* Измените стиль границы по вашему усмотрению */
+    & > *:not(:last-child) {
+      border-bottom: 1px solid $white;
+    }
+  }
 }
 
-    .listItem {
-      display: flex;
-      // flex-wrap: wrap;
+.main {
+  display: flex;
+  height: calc(100vh - 140px);
+  overflow: hidden;
+  position: relative;
+  gap: 4px;
 
-      @media screen and (max-width: 1000px) {
-        /* Сброс свойств flex для элементов внутри .listItem */
-        flex-direction: column;
+  &List {
+    width: 40%;
+    overflow-y: auto;
+    max-height: 100%;
+    border: 1px solid $grey;
+  }
+
+  &Container {
+    width: 60%;
+    overflow-y: auto;
+    max-height: 100%;
+    background-color: $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &Candidates {
+      color: $greyText;
+
+      &Choose {
+        
+        &Icon {
+          position: relative;
+          top: 0;
+          left: -5px;
+          font-size: 1.3rem;
+          animation: slideFromLeft 0.5s forwards; /* Продолжительность анимации 0.5 секунды */
+
+        }
+        &Text {
+        }
       }
     }
-    .listItem > :first-child {
-      flex: 0 0 40%;
-    }
-    .listItem > :nth-child(2) {
-      flex: 0 0 60%;
-    }
-    @media screen and (max-width: 1000px) {
-      /* Сброс свойств flex для элементов внутри .listItem */
-      .listItem > :first-child,
-      .listItem > :nth-child(2) {
-        flex: unset; /* Или flex: unset; в зависимости от вашего случая */
-      }
-    }
+  }
+}
+
+.section {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    left: 10px;
+  }
+  100% {
+    transform: translateX(0);
+    left: -5px;
+    // opacity: 1;
   }
 }

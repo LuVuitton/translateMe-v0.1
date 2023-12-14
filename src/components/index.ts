@@ -5,7 +5,6 @@ export { default as Preloader } from "./Preloader";
 export { default as SecondAsignmentBlock } from "./SecondAsignmentBlock";
 export { default as Section } from "./Section";
 export { default as Title } from "./Title";
-export { default as Accordion } from "./Accordion";
 
 export { default as DatePicker } from "./form/DatePicker";
 export { default as FormInput } from "./form/FormInput";

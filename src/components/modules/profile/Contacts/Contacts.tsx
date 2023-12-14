@@ -3,6 +3,8 @@ import { useTranslations } from "next-intl";
 import s from "./contacts.module.scss";
 import { useGetContactsByIDQuery } from "@/app/api/clientRequests/contacts/contacts.api";
 import { Preloader } from "@/components";
+import { FaLock } from "react-icons/fa6";
+import { CgSmileNeutral } from "react-icons/cg";
 
 export default function Contacts({ userID }: { userID: number }) {
   const { data, isError, isLoading, error } = useGetContactsByIDQuery({
@@ -37,7 +39,7 @@ export default function Contacts({ userID }: { userID: number }) {
             </div>
           );
           gridContactBlocks.push(
-            <div key={i * 100} className={s.contactItem}>
+            <div key={i + 100} className={s.contactItem}>
               <span className={s.contactItemValue}>{v}</span>
             </div>
           );
@@ -50,14 +52,25 @@ export default function Contacts({ userID }: { userID: number }) {
         {gridContactBlocks.length > 0 ? (
           <div className={s.contactsWrapper}>{gridContactBlocks}</div>
         ) : (
-          <div className={s.noContacts}>{t("notAdded")}</div>
+          <div className={s.noContacts}>
+            <div className={s.iconAdded}>
+              <CgSmileNeutral />
+            </div>
+            {t("notAdded")}
+          </div>
         )}
       </div>
     );
   } else if (data && "message" in data && data.status === 403) {
     return (
       <div className={s.mainWrapper}>
-        <div className={s.forbiden}>{t("noAccess")}</div>
+        <div className={s.noContacts}>
+          <div className={s.iconAccess}>
+            <FaLock />
+          </div>
+
+          {t("noAccess")}
+        </div>
       </div>
     );
   }

@@ -13,6 +13,7 @@ export default function ProfileShortHead({
   userID,
   user_photo,
   user_registration_date,
+  children,
 }: Props) {
   const t = useTranslations("profilePage");
 
@@ -48,7 +49,7 @@ export default function ProfileShortHead({
           <ImProfile className={s.mainNavLinkIcon} />
           {t("openFullProfile")}
         </Link>
-        <TheButton btnText="pick one" color="green" />
+        {children}
       </div>
     </div>
   );
@@ -59,4 +60,5 @@ type Props = {
   full_name: string;
   user_photo: string | null;
   user_registration_date: string;
+  children: React.ReactNode;
 };

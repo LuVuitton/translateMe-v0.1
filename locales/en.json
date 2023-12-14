@@ -180,7 +180,8 @@
   "createdByMe": {
     "status": "status",
     "upcoming": "upcoming",
-    "closed": "closed"
+    "closed": "closed",
+    "chooseAssignmnent":"Choose assignmnent"
   },
   "common": {
     "statuses": {
@@ -199,7 +200,7 @@
       "viber": "viber",
       "whatsapp": "whatsappd",
       "noAccess": "you don't have access to the user's contacts yet",
-      "notAdded": "the user has not added contacts yet"
+      "notAdded": "User has not added contacts yet"
     },
     "languages": {
       "1": "Ukrainian",
@@ -217,7 +218,7 @@
         "2": "advanced",
         "3": "native"
       },
-      "notAdded": "User has not yet added languages ​​to his profile"
+      "notAdded": "User has not added languages ​​yet"
     },
     "countries": {
       "1": "USA",

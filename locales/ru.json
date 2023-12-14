@@ -176,7 +176,9 @@
   "createdByMe": {
     "status": "статус",
     "upcoming": "предстоящие",
-    "closed": "прошлые"
+    "closed": "прошлые",
+    "chooseAssignmnent":"Выберите задачу"
+
   },
   "common": {
     "statuses": {

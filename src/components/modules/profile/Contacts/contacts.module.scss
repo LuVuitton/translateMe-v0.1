@@ -12,7 +12,6 @@
     .contactItem {
       padding: 5px 0;
 
-
       &Key {
         color: $greyText;
         font-size: $textSmall;
@@ -25,7 +24,7 @@
       }
 
       &:nth-child(even) {
-       text-align: end;
+        text-align: end;
       }
     }
   }
@@ -34,11 +33,25 @@
     // background-color: $grey;
     text-align: center;
     padding: 20px;
+    color: $greyText;
+    font-size: $textMedium;
+    
+
+  
   }
-  .forbiden {
-    // width: 100%;
-    padding: 10px;
-    background-color: $grey;
-    text-align: center;
-  }
+}
+
+
+
+.iconAdded {
+  font-size: 1.7rem;
+  // position: relative;
+  // top: 1px;
+  //   left: -7px;
+}
+.iconAccess {
+  font-size: 1.5rem;
+  // position: relative;
+  // top: -1px;
+  //   left: -7px;
 }

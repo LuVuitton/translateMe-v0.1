@@ -1,9 +1,9 @@
 @import "@/style/variables.module.scss";
 
 .UserLangsWrapper {
-& li:not(:nth-last-child(-n + 1)) {
-      border-bottom: 1px solid $line;
-    }
+  & li:not(:nth-last-child(-n + 1)) {
+    border-bottom: 1px solid $line;
+  }
 
   .itemWrapper {
     padding: 5px 0;
@@ -11,12 +11,11 @@
     justify-content: space-between;
     gap: 10px;
     // &:not(:nth-last-child(-n + 2)) {
-      // border-bottom: 1px solid $line;
+    // border-bottom: 1px solid $line;
     // }
 
     .languageName {
       font-size: $textMedium;
-
     }
     .proficiency {
       color: $greyText;
@@ -25,7 +24,15 @@
   }
 }
 .noLanguages {
-  width: 100%;
   text-align: center;
   padding: 20px;
+  color: $greyText;
+  font-size: $textMedium;
+}
+
+.iconAdded {
+  font-size: 1.7rem;
+  position: relative;
+  top: -2px;
+  left: 0;
 }

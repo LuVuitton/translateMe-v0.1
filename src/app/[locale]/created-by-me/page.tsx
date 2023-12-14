@@ -1,27 +1,38 @@
 "use client";
-import Link from "next/link";
 import s from "./index.module.scss";
 import { useGetMyAssignmentQuery } from "@/app/api/clientRequests/assignment/assignment.api";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Candidates, Preloader, Section } from "@/components";
 import { AssignmentShortListItem } from "@/components/modules";
+import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 
 export default function AssignmentsCreatedByMe() {
+  const [shownCandidates, setShownCandidates] = useState<number | null>(null);
   const { data, isLoading } = useGetMyAssignmentQuery();
   const t = useTranslations("createdByMe");
-  const tCommon = useTranslations("common.statuses");
   const [listShown, setListShown] = useState<ListShownOptopns>("upcoming");
   let upcomingAssignments: JSX.Element[] = [];
   let closedAssignments: JSX.Element[] = [];
 
+  const showCandidatesHandler = (assignmentsID: number) => {
+    setShownCandidates(assignmentsID);
+  };
+
+  const switchOptionHandler = (option: ListShownOptopns) => {
+    setListShown(option);
+    setShownCandidates(null);
+  };
+
   data?.data.forEach((e) => {
     const item = (
       <li key={e.assignment_id} className={s.listItem}>
-        <Link href={`assignments/${e.assignment_id}`}>
+        {/* <Link href={`assignments/${e.assignment_id}`}> */}
+        <div onClick={() => showCandidatesHandler(e.assignment_id)}>
           <AssignmentShortListItem assignmentData={e} />
-        </Link>
-        <Candidates assignmentID={e.assignment_id} />
+        </div>
+        {/* </Link> */}
+        {/* <Candidates assignmentID={e.assignment_id} /> */}
       </li>
     );
 
@@ -33,23 +44,49 @@ export default function AssignmentsCreatedByMe() {
   });
 
   if (isLoading) {
-    return <Preloader type="local" />;
+    // return <Preloader type="local" />;
+    return <div>loadibg page...</div>;
   }
 
   return (
     <div className={s.listWrapper}>
-      <Section>
-      <div className={s.nav}>
-        <div className={s.navItem} onClick={() => setListShown("upcoming")}>
-          {t("upcoming")}
+      <Section className={s.section}>
+        <div className={s.nav}>
+          <div
+            className={s.navItem}
+            onClick={() => switchOptionHandler("upcoming")}
+          >
+            {t("upcoming")}
+          </div>
+          <div
+            className={s.navItem}
+            onClick={() => switchOptionHandler("closed")}
+          >
+            {t("closed")}
+          </div>
         </div>
-        <div className={s.navItem} onClick={() => setListShown("closed")}>
-          {t("closed")}
+
+        <div className={s.main}>
+          <ul className={`${s.list} ${s.mainList}`}>
+            {listShown === "upcoming" ? upcomingAssignments : closedAssignments}
+          </ul>
+          <div className={s.mainContainer}>
+            <div className={s.mainContainerCandidates}>
+              {shownCandidates ? (
+                <Candidates assignmentID={shownCandidates} />
+              ) : (
+                <div className={s.mainContainerCandidatesChoose}>
+                  <span className={s.mainContainerCandidatesChooseIcon}>
+                    <FaRegArrowAltCircleLeft />
+                  </span>
+                  <span className={s.mainContainerCandidatesChooseText}>
+                    {t("chooseAssignmnent")}
+                  </span>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-      <ul className={s.list}>
-        {listShown === "upcoming" ? upcomingAssignments : closedAssignments}
-      </ul>
       </Section>
     </div>
   );

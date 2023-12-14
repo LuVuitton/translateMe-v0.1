@@ -32,9 +32,7 @@ const TheButton: React.FC<Props> = ({
       disabled={isLoading} //
     >
       <span className={s.btnText}>
-      {/* <span className={s.icon}><SlActionRedo /></span> */}
         {isLoading ? <Preloader show type="local" /> : btnText}
-
       </span>
     </button>
   );
