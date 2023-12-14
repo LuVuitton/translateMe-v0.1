@@ -1,0 +1,84 @@
+// @import "../../../../style/variables.scss";
+@import '@/style/variables.module.scss';
+@import '@/style/mixins.scss';
+
+
+
+.assignmentWrapper {
+  margin-bottom: 1px;
+  padding: 5px;
+  max-width: 700px;
+  display: flex;
+  gap: 150px;
+  background-color: $grey;
+
+  .container {
+    display: flex;
+    flex-grow: 1;
+    padding: 5px;
+    justify-content: space-between;
+
+    .left {
+      // padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 15px;
+
+      .topLeft {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .title {
+          font-size: 1.2rem;
+          font-weight: 500;
+          @include text-ellipsis(1);
+          word-break: break-all;
+        }
+        .description {
+          @include text-ellipsis(1);
+          font-size: 13px;
+          word-break: break-all;
+          font-weight: 100;
+
+
+        }
+      }
+      .bottomLeft {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        .fn {
+          font-size: 13px;
+          font-weight: 100;
+        }
+        .status {
+          // color: $green;
+          // color: #cc6868f0;
+          color: #c7894cf0;
+          // color: #47a085;
+        }
+      }
+    }
+   
+    .right {
+      min-width: 110px;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .worth {
+        color: $green;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.020)
+  }
+}

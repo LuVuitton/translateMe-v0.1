@@ -1,0 +1,57 @@
+{
+  "hello-world": "Hallo Welt",
+  "auth": {
+    "common": {
+      "sign-up-btn": "Registrieren",
+      "sign-in-btn": "Anmelden",
+      "already-have-account": "Ich habe bereits einen Account. Einloggen",
+      "dont-have-account": "Neu hier? Registrieren",
+      "dont-have-account-description": "(Es geht schneller, als du denkst)",
+      "regestration-title": "Registrierung",
+      "registration-description": "Hier geht es wirklich schnell",
+      "sign-in-title": "Anmelden",
+      "sign-in-description": "Тут дикий слоган на немецком",
+      "forgot-pass": "Passwort vergessen?"
+    },
+    "fields-name": {
+      "email": "E-Mail",
+      "password": "Passwort",
+      "passwordConfirm": "Passwort bestätigen",
+      "agreements": "Ich stimme den Nutzungsbedingungen und der Datenschutzrichtlinie zu"
+    },
+    "auth-errors": {
+      "common": {
+        "required": "Dieses Feld ist erforderlich"
+      },
+      "email": {
+        "invalid-characters": "Ungültiges E-Mail-Format",
+        "spaces": "E-Mail darf keine Leerzeichen enthalten"
+      },
+      "password": {
+        "min": "Das Pass muss mindestens 6 Zeichen lang sein",
+        "max": "Das Pass darf maximal 20 Zeichen lang sein",
+        "spaces": "Das Pass darf keine Leerzeichen enthalten",
+        "invalidCharacters": "Das Pass kann lateinische Zeichen",
+        "complexity": "Das Passwort muss a-z, A-Z, 1-9"
+      },
+      "password-confirm": {
+        "oneOf": "Die Passwörter müssen übereinstimmen"
+      },
+      "agreements": {}
+    },
+    "social-auth": {
+      "sign-up-btn-text": "Registrieren mit",
+      "sign-in-btn-text": "Anmelden mit",
+
+      "or": "oder"
+    }
+  },
+  "header": {
+    "btns": {
+      "settings": "Einstellungen",
+      "online-stack": "Jetzt in der Nähe",
+      "favorites": "Favoriten",
+      "conversations": "Chat"
+    }
+  }
+}

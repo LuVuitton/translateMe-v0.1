@@ -1,0 +1,59 @@
+{
+  "hello-world": "Hola Mundo",
+  "auth": {
+    "common": {
+      "sign-up-btn": "Registrarse",
+      "sign-in-btn": "Iniciar sesión",
+      "already-have-account": "Ya tengo una cuenta. Iniciar sesión",
+      "dont-have-account": "¿Eres nuevo aquí? Regístrate",
+      "dont-have-account-description": "(Es más rápido de lo que piensas)",
+      "regestration-title": "Registro",
+      "registration-description": "Aquí es realmente rápido",
+      "sign-in-title": "Iniciar sesión",
+      "sign-in-description": "Тут дикий слоган на испанском",
+      "forgot-pass":"¿Olvidaste tu contraseña?"
+    },
+    "fields-name": {
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "passwordConfirm": "Confirmar contraseña",
+      "agreements": "Estoy de acuerdo con los Términos de Servicio y la Política de Privacidad"
+    },
+    "auth-errors": {
+      "common": {
+        "required": "Este campo es obligatorio"
+      },
+      "email": {
+        "invalid-characters": "Formato de correo electrónico inválido",
+        "spaces": "El correo electrónico no debe contener espacios"
+      },
+      "password": {
+        "min": "La pass debe tener al menos 6 caracteres",
+        "max": "La pass no debe superar los 20 caracteres",
+        "spaces": "La pass no debe contener espacios",
+        "invalidCharacters": "La pass puede contener caracteres latinos",
+        "complexity": "La pass debe contener a-z, A-Z, 1-9"
+      },
+      "password-confirm": {
+        "oneOf": "Las contraseñas deben coincidir"
+      }
+    },
+    "social-auth": {
+      "sign-up-btn-text": "Registrarse con",
+      "sign-in-btn-text": "Iniciar sesión con",
+
+      "or": "o"
+    }
+  },
+  "header": {
+    "btns": {
+      "settings":"Configuración",
+      "online-stack":"Cerca ahora",
+      "favorites":"Favoritos",
+      "conversations":"Chat"
+    }
+  }
+}
+
+
+

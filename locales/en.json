@@ -1,0 +1,297 @@
+{
+  "create-assignmnent": {
+    "title": "Create new assignment",
+    "description": "desscription",
+
+    "fields": {
+      "address": {
+        "description": "addres description",
+        "placeholder": "addres placeholder"
+      },
+      "assignment_date": {
+        "description": "date description"
+      },
+      "assignment_title": {
+        "placeholder": "title placeholder"
+      },
+      "city_id": {
+        "description": "city description",
+        "placeholder": "city placeholder"
+      },
+      "country_id": {
+        "description": "country description",
+        "placeholder": "country placeholder"
+      },
+      "assignment_description": {
+        "description": "description description",
+        "placeholder": "description placeholder"
+      },
+      "execution_time_minutes": {
+        "description": "time description"
+      },
+      "worth": {
+        "description": "worth description"
+      },
+      "customer_languages_id": {
+        "description": "customerlanguages description",
+        "placeholder": "customerlanguages placeholder"
+      },
+      "required_languages_id": {
+        "description": "requiredlanguages description",
+        "placeholder": "requiredlanguages placeholder"
+      }
+    }
+  },
+  "assignmnentPage": {
+    "created": "created",
+    "posted": "posted",
+    "updated": "updated",
+    "speaks": "speaks",
+    "needs": "needs",
+    "where": "where",
+    "when": "when",
+    "executionTime": "estimated duration",
+    "location": "location",
+    "status": "status",
+    "сandidates": "сandidates",
+    "views": "views",
+    "author": "author",
+    "executor": "executor",
+    "description": "description",
+    "noExecutor": "has not been appointed yet",
+    "worth": "worth",
+    "btn": {
+      "toApply": "to Apply",
+      "cancelApplication": "cancel Application"
+    },
+    "myOtherAssignmnents": "my other assignmnents"
+  },
+
+  "profilePage": {
+    "location": "Location",
+    "registered": "Registered",
+    "createdAsCustomer": "Placed tasks",
+    "complitedAsExecutor": "Completed tasks",
+    "userPhoto": "User photo",
+    "noPhoto": "No photo",
+    "noDiscription": "No description yet",
+    "rating": {
+      "userRating": "user rating",
+      "raters": "number of raters"
+    },
+    "author": "Assignment's author"
+  },
+  "auth": {
+    "common": {
+      "sign-up-btn": "Sign Up",
+      "sign-in-btn": "Sign In",
+      "already-have-account": "I already have an account. Log in",
+      "dont-have-account": "New here? Sign up",
+      "dont-have-account-description": "(It's faster than you think)",
+      "regestration-title": "Registration",
+      "registration-description": "Here it is indeed fast",
+      "sign-in-title": "Sign In",
+      "sign-in-description": "There's a wild slogan here",
+      "forgot-pass": "Forgot password?"
+    },
+    "fields-name": {
+      "email": "Email",
+      "full_name": "Full name",
+      "password": "Password",
+      "passwordConfirm": "Confirm Password",
+      "agreements": "I agree to the Terms of Service and Privacy Policy"
+    },
+    "auth-errors": {
+      "common": {
+        "required": "This field is required"
+      },
+      "email": {
+        "invalid-characters": "Invalid email format",
+        "spaces": "Email should not contain spaces"
+      },
+      "password": {
+        "min": "Password should be at least 6 characters long",
+        "max": "Password should not exceed 20 characters",
+        "spaces": "Password should not contain spaces",
+        "invalidCharacters": "Password can contain Latin characters ",
+        "complexity": "Password should contain a-z, A-Z, 1-9"
+      },
+      "full_name": {
+        "min": "Full name should be at least 3 characters long",
+        "max": "Full name should not exceed 40 characters"
+      },
+      "password-confirm": {
+        "oneOf": "Passwords must match"
+      },
+      "agreements": {}
+    },
+    "social-auth": {
+      "sign-up-btn-text": "Sign up with",
+      "sign-in-btn-text": "Sign in with",
+
+      "or": "or"
+    }
+  },
+  "header": {
+    "btns": {
+      "settings": "Settings",
+      "assignments": "Assignments"
+    },
+    "settings": {
+      "myProfile": "My Profile",
+      "editProfile": "Edit Profile",
+      "myApplies": "My Applies",
+      "createdbyme": "Created by Me",
+      "createAssignment": "Create new assignment",
+      "whywedothis": "Why we do this",
+      "contacts": "Contacts",
+      "changeLanguage": "Change Language",
+      "logOut": "Log Out"
+    }
+  },
+
+  "review": {
+    "placeholder": "Leave a comment",
+    "addCommentsBtn": "Add comment"
+  },
+  "editProfile": {
+    "backBtn": "back to options",
+    "options": {
+      "updateLocationAndAboutMe": "update location and about me",
+
+      "updateMyLanguages": "update my languages",
+
+      "updateMyContacts": "update my contacts"
+    }
+  },
+
+  "candidates": {
+    "applied": "applied",
+    "noCandidates": "there are no candidates yet",
+    "btn": {
+      "pickOne": "pick one",
+      "cancel": "cancel"
+    },
+    "isCandidate": "currently is candidate"
+  },
+  "createdByMe": {
+    "status": "status",
+    "upcoming": "upcoming",
+    "closed": "closed"
+  },
+  "common": {
+    "statuses": {
+      "1": "looking for an executor",
+      "2": "in progress",
+      "3": "completed",
+      "4": "expired",
+      "5": "canceled",
+      "6": "conditions are not met"
+    },
+    "contacts": {
+      "instagram": "instagram",
+      "other_contacts": "other contacts",
+      "phone_number": "phone",
+      "telegram": "telegram",
+      "viber": "viber",
+      "whatsapp": "whatsappd",
+      "noAccess": "you don't have access to the user's contacts yet",
+      "notAdded": "the user has not added contacts yet"
+    },
+    "languages": {
+      "1": "Ukrainian",
+      "2": "Thai",
+      "3": "Spanish",
+      "4": "Russian",
+      "5": "Italian",
+      "6": "Hindi",
+      "7": "German",
+      "8": "French",
+      "9": "English",
+      "10": "Arabic",
+      "proficiency": {
+        "1": "intermediate",
+        "2": "advanced",
+        "3": "native"
+      },
+      "notAdded": "User has not yet added languages ​​to his profile"
+    },
+    "countries": {
+      "1": "USA",
+      "2": "Ukraine",
+      "3": "Germany",
+      "4": "Italy",
+      "5": "United Kingdom",
+      "6": "UAE",
+      "7": "France",
+      "8": "Canada",
+      "9": "Australia",
+      "10": "Spain",
+      "11": "Thailand",
+      "12": "India"
+    },
+    "cities": {
+      "1": "New York",
+      "2": "Los Angeles",
+      "3": "Chicago",
+      "4": "Houston",
+      "5": "Phoenix",
+      "6": "Kyiv",
+      "7": "Kharkiv",
+      "8": "Odesa",
+      "9": "Dnipro",
+      "10": "Lviv",
+      "11": "Berlin",
+      "12": "Hamburg",
+      "13": "Munich",
+      "14": "Cologne",
+      "15": "Frankfurt",
+      "16": "Rome",
+      "17": "Milan",
+      "18": "Naples",
+      "19": "Turin",
+      "20": "Palermo",
+      "21": "London",
+      "22": "Birmingham",
+      "23": "Manchester",
+      "24": "Glasgow",
+      "25": "Liverpool",
+      "26": "Dubai",
+      "27": "Abu Dhabi",
+      "28": "Sharjah",
+      "29": "Al Ain",
+      "30": "Ajman",
+      "31": "Paris",
+      "32": "Marseille",
+      "33": "Lyon",
+      "34": "Toulouse",
+      "35": "Nice",
+      "36": "Toronto",
+      "37": "Montreal",
+      "38": "Vancouver",
+      "39": "Calgary",
+      "40": "Edmonton",
+      "41": "Sydney",
+      "42": "Melbourne",
+      "43": "Brisbane",
+      "44": "Perth",
+      "45": "Adelaide",
+      "46": "Madrid",
+      "47": "Barcelona",
+      "48": "Valencia",
+      "49": "Seville",
+      "50": "Zaragoza",
+      "51": "Bangkok",
+      "52": "Chiang Mai",
+      "53": "Phuket",
+      "54": "Pattaya",
+      "55": "Krabi",
+      "56": "New Delhi",
+      "57": "Mumbai",
+      "58": "Bangalore",
+      "59": "Chennai",
+      "60": "Kolkata"
+    }
+    
+  }
+}

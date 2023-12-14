@@ -1,0 +1,16 @@
+@import "@/style/variables.module.scss";
+
+.mainWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  // text-align: fle;
+  justify-content: space-between;
+  .description {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: $grey;
+  }
+}

@@ -1,0 +1,96 @@
+// @import "../../../style/variables.scss";
+@import "@/style/variables.module.scss";
+
+.mainWrapper {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    max-width: 450px;
+
+
+    
+    .titleAndDescription {
+      padding: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: $red;
+      h1 {
+        font-size: x-large;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      p {
+        color: $grey;
+        font-size: 0.8rem;
+      }
+    }
+    .formEl {
+      width: 100%;
+      .inputsWrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 30px;
+
+
+
+          margin-bottom: 20px; 
+
+          .btnWrapper{  
+            display: flex;
+            justify-content: center;
+        .submitBtn {
+          padding: 12px 25px;
+          border-color: rgba(0, 0, 0, 0);
+          border: none;
+          background-color: $green;
+          color: #fff;
+          cursor: pointer;
+          border-radius: 20px;
+          box-shadow: #1877f2 0px 0.637473px 1.14745px -1.125px,
+            rgba(0, 0, 0, 0.24) 0px 1.93094px 3.4757px -2.25px,
+            rgba(0, 0, 0, 0.192) 0px 5.10423px 9.18761px -3.375px,
+            rgba(0, 0, 0, 0.03) 0px 16px 28.8px -4.5px;
+          // opacity: 1;
+          &:hover {
+            background-color: #1f7620eb;
+            color: #eef3fa;
+            box-shadow: rgba(0, 0, 0, 0.26) 0px 0.637473px 1.14745px -1.125px,
+              rgba(0, 0, 0, 0.24) 0px 1.93094px 2.4757px -2.25px,
+              rgba(0, 0, 0, 0.192) 0px 5.10423px 5.18761px -3.375px,
+              rgba(0, 0, 0, 0.03) 0px 16px 28.8px -8.5px;
+          }
+        }
+      }
+        .disabledBtn {
+          color: rgba(208, 208, 208, 0.761);
+          &:hover {
+            color: rgba(208, 208, 208, 0.761);
+          }
+        }
+      }
+    }
+    .or {
+      text-align: center;
+
+
+        margin-bottom: 20px; 
+
+    }
+    .socialsBtns {
+
+        margin-bottom: 20px ; 
+
+    }
+
+    .alreadyHaveAccoutn {
+      text-align: center;
+      text-decoration: none;
+      color: $green;
+    }
+  }
+}

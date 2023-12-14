@@ -1,0 +1,16 @@
+@import '@/style/variables.module.scss';
+
+
+.wrapper {
+    height: 300px;
+    width: 100%;
+    color: whitesmoke;
+    padding: 10px;
+    
+    .footer {
+        background-color: $greenBg;
+        border-radius: 8px;
+        height: 100%;
+
+    }
+}

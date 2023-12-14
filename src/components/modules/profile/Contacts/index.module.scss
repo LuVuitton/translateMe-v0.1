@@ -1,0 +1,36 @@
+@import "@/style/variables.module.scss";
+
+.mainWrapper {
+  width: 100%;
+
+  .contactsWrapper {
+    background-color: $grey;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    .contactItem {
+      padding: 10px 30px;
+      &:not(:nth-last-child(-n + 2)) {
+        border-bottom: 1px solid; /* Добавляем нижний бордер ко всем элементам, кроме последнего */
+      }
+
+      &:nth-child(even) {
+        // text-align: start;
+        border-left: 1px solid; /* Добавляем левую границу для каждого второго span */
+      }
+    }
+  }
+
+  .noContacts {
+    background-color: $grey;
+    text-align: center;
+    padding: 20px;
+  }
+  .forbiden {
+    // width: 100%;
+    padding: 10px;
+    background-color: $grey;
+    text-align: center;
+  }
+}

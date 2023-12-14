@@ -1,0 +1,29 @@
+@import "@/style/variables.module.scss";
+.param {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: $greyText;
+
+  &Item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    &Icon {
+        font-size: 1.3rem;
+        position: relative;
+        top: 2px;
+    }
+    &Title {
+        font-size: $textSmall;
+    }
+    &Content {
+      &El {
+        font-size: $textMedium;
+        color: $blackText;
+        padding-right: 5px;
+      }
+    }
+  }
+}

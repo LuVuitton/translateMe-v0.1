@@ -1,0 +1,19 @@
+// @import '../../style/variables.scss';
+@import "@/style/variables.module.scss";
+
+.langItem {
+  background-color: $grey;
+  color: $greyText;
+  display: inline-block;
+  min-width: 30px;
+  font-size: $textMedium;
+  text-align: center;
+  border-radius: 4px;
+  padding: 7px;
+  margin-right: 2px;
+}
+
+.small {
+  font-size: $textSmall;
+  padding: 4px;
+}

@@ -1,0 +1,34 @@
+@import "@/style/variables.module.scss";
+// @import "../../../style/variables.scss";
+
+.mainWrapper {
+  margin-bottom: 1rem; /* Регулирует расстояние между элементами */
+  width: 100%;
+  .mainContainer {
+    position: relative;
+
+    .customInput {
+      font-family: inherit;
+      resize: none;
+
+      border: 2px solid $grey; /* Толщина рамки и цвет */
+      width: 100%;
+      padding: 10px; /* Внутренний отступ в инпуте */
+      &:focus {
+        border-color: $green; /* Цвет рамки при фокусе */
+        outline: none; /* Убираем внешний контур при фокусе */
+      }
+    }
+    .redBorder {
+      border: 2px solid $red; /* Определение красной рамки */
+    }
+
+    // .errorMessage {
+    //   position: absolute;
+    //   top: 101%;
+    //   left: 2px;
+    //   font-size: 0.8rem; /* Регулирует размер текста сообщения об ошибке */
+    //   color: $redCaseFive; /* Цвет текста ошибки */
+    // }
+  }
+}

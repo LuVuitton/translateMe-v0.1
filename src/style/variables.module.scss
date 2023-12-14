@@ -1,0 +1,39 @@
+$grey: #f2f7f2;
+$greyHover: #f2f7f280;
+$greyText: #5e6d55cf;
+$icons: #5e6d559b;
+$green: #108a00;
+$red: #9d1111;
+$white: #ffffff;
+$blackText: #000000f1;
+$line: #80808027;
+$greenBg: #003d00;
+
+$textSmall: 0.8rem;
+$textMedium: 0.9rem;
+
+$sizeMB: 600px;
+$sizeTB: 900px;
+
+// @media screen and (max-width: $sizeMB) {
+//     max-width: none;
+//   }
+
+:export {
+  grey: $grey;
+  greyHover: $greyHover;
+  greyText: $greyText;
+  icons: $icons;
+  green: $green;
+  red: $red;
+  white: $white;
+  blackText: $blackText;
+  line: $line;
+  greenBg: $greenBg;
+
+  textSmall: $textSmall;
+  textMedium: $textMedium;
+
+  sizeMB: $sizeMB;
+  sizeTB: $sizeTB;
+}

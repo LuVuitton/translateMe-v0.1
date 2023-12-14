@@ -1,0 +1,12 @@
+@import "@/style/variables.module.scss";
+
+
+.mainWrapper {
+    margin-bottom: 1.5rem; /* Регулирует расстояние между элементами */
+    width: 100%;
+    position: relative; //errors
+
+.backgroundColor {
+    background: $red;
+}
+}

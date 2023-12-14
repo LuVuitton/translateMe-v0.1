@@ -1,0 +1,38 @@
+@import "@/style/variables.module.scss";
+
+.head {
+  &Section {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    color: $greyText;
+    font-size: $textMedium;
+
+    &Icon {
+      font-size: 1.1rem;
+      // color: $blackText;
+    }
+    &Author {
+      // color: $blackText;
+
+      padding-right: 40px;
+      & a {
+        border-bottom: 2px solid $grey;
+        &:hover {
+          border-bottom: none
+        }
+      }
+    }
+    &Date {
+      // color: $blackText;
+
+      // justify-content: space-around;
+    }
+
+    @media screen and (max-width: $sizeMB) {
+      gap: 5px;
+      flex-direction: column;
+    }
+  }
+}

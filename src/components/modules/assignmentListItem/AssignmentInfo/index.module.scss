@@ -1,0 +1,25 @@
+@import "@/style/variables.module.scss";
+
+.info {
+  font-size: $textMedium;
+  color: $greyText;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  @media screen and (max-width: $sizeMB) {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+
+  &Item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &Worth {
+      color: $green;
+    }
+  }
+}

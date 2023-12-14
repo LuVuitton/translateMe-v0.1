@@ -1,0 +1,7 @@
+.list {
+  max-width: 70vw;
+
+  @media screen and (max-width: 600px) {
+    max-width: none;
+  }
+}

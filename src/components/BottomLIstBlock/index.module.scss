@@ -1,0 +1,38 @@
+// @import "../../style/variables.scss";
+@import "@/style/variables.module.scss";
+
+
+.bottomListBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  // max-width: 250px;
+  // min-width: 170px;
+  min-height: 100px;
+  // border: 1px solid red;
+  flex-grow: 1;
+
+  .top {
+    font-size: 1.3rem;
+    font-weight: 100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .bottom {
+    font-size: 15px;
+    font-weight: 500;
+    color: $grey;
+    text-align: center;
+  }
+}
+
+.green {
+  color: $green;
+}

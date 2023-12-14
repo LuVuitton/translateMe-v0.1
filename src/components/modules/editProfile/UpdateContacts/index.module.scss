@@ -1,0 +1,12 @@
+.formItem {
+  display: flex;
+  align-items: baseline;
+  max-width: 300px;
+  .formName {
+  flex-grow: 1;
+
+  }
+  .formInput {
+
+  }
+}

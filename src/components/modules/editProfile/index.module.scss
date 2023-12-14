@@ -1,0 +1,103 @@
+// @import "../../../style/variables.scss";
+@import "@/style/variables.module.scss";
+
+.mainWrapper {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    max-width: 450px;
+
+    .titleAndDescription {
+      padding: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: $red;
+      h1 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      p {
+        color: $grey;
+        font-size: 0.8rem;
+      }
+    }
+    .formEl {
+      width: 100%;
+      .inputsWrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        background-color: $grey;
+
+        margin-bottom: 20px;
+
+        .location {
+          display: flex;
+          gap: 10px;
+        }
+
+        .executionTimeWrapper {
+          display: flex;
+          // text-align: fle;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          .executionTimeDesription {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: $greyText;
+          }
+        }
+
+        .worthWrapper {
+          display: flex;
+          flex-wrap: wrap;
+          // text-align: fle;
+          justify-content: space-between;
+          .worthDesription {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: $greyText;
+          }
+        }
+
+        .dateWrapper {
+          display: flex;
+          .dateDesriptiom {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: $greyText;
+          }
+          .datePicker {
+          }
+        }
+
+        .btnWrapper {
+          display: flex;
+          justify-content: center;
+          padding-top: 20px;
+        }
+        .disabledBtn {
+          color: $greyText;
+          &:hover {
+            color: $greyHover;
+          }
+        }
+      }
+    }
+  }
+}

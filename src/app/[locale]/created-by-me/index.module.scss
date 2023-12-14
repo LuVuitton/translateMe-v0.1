@@ -1,0 +1,52 @@
+@import "../../../style/variables.module.scss";
+.listWrapper {
+  // max-width: 70vw;
+
+  @media screen and (max-width: 600px) {
+    max-width: none;
+  }
+  .nav {
+    display: flex;
+    .navItem {
+      height: 55px;
+      background-color: $grey;
+      margin: 1px;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background-color: $greyHover;
+      }
+    }
+  }
+
+  .list {
+    &> *:not(:last-child) {
+  border-bottom: 1px solid $white; /* Измените стиль границы по вашему усмотрению */
+}
+
+    .listItem {
+      display: flex;
+      // flex-wrap: wrap;
+
+      @media screen and (max-width: 1000px) {
+        /* Сброс свойств flex для элементов внутри .listItem */
+        flex-direction: column;
+      }
+    }
+    .listItem > :first-child {
+      flex: 0 0 40%;
+    }
+    .listItem > :nth-child(2) {
+      flex: 0 0 60%;
+    }
+    @media screen and (max-width: 1000px) {
+      /* Сброс свойств flex для элементов внутри .listItem */
+      .listItem > :first-child,
+      .listItem > :nth-child(2) {
+        flex: unset; /* Или flex: unset; в зависимости от вашего случая */
+      }
+    }
+  }
+}

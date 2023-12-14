@@ -1,0 +1,60 @@
+{
+  "hello-world": "Привіт світ",
+  "auth": {
+    "common": {
+      "sign-up-btn": "Зареєструватися",
+      "sign-in-btn": "Увійти",
+      "already-have-account": "У мене вже є обліковий запис. Увійти",
+      "dont-have-account": "Вперше тут? Зареєструйтесь",
+      "dont-have-account-description": "(Це швидше, ніж ви думаєте)",
+      "regestration-title": "Реєстрація",
+      "registration-description": "Тут це дійсно швидко",
+      "sign-in-title": "Увійти",
+      "sign-in-description": "Тут дикий слоган",
+      "forgot-pass":"Забули пароль?"
+    },
+    "fields-name": {
+      "email": "Ел. пошта (email)",
+      "password": "Пароль",
+      "passwordConfirm": "Підтвердження пароля",
+      "agreements": "Я погоджуюся з Умовами надання послуг та Політикою конфіденційності"
+    },
+    "auth-errors": {
+      "common": {
+        "required": "Це поле обов'язкове"
+      },
+      "email": {
+        "invalid-characters": "Невірний формат ел. пошти",
+        "spaces": "Ел. пошта не повинна містити пробіли"
+      },
+      "password": {
+        "min": "Пароль повинен містити мін 6 символів",
+        "max": "Пароль повинен містити макс 20 символів",
+        "spaces": "Пароль не повинен містити пробіли",
+        "invalidCharacters": "Пароль може містити латинські символи",
+        "complexity": "Пароль повинен містити a-z, A-Z, 1-9"
+      },
+      "password-confirm": {
+        "oneOf": "Паролі повинні співпадати"
+      }
+    },
+    "social-auth": {
+      "sign-up-btn-text": "Зареєструватися за допомогою",
+      "sign-in-btn-text": "Увійти з",
+
+      "or": "або"
+    }
+  },
+  "header": {
+    "btns": {
+      "settings":"Налаштування",
+      "online-stack":"Зараз поруч",
+      "favorites":"Улюблене",
+      "conversations":"Чат"
+    }
+  }
+}
+
+
+
+

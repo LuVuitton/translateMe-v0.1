@@ -1,0 +1,12 @@
+@import "@/style/variables.module.scss";
+
+.langs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 1em;
+
+  &Title {
+    font-size: $textMedium;
+    font-weight: 100;
+  }
+}

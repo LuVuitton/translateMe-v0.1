@@ -1,0 +1,32 @@
+@import "@/style/variables.module.scss";
+
+.mainWrapper {
+  display: flex;
+
+  .desriptiom {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #85898e;
+  }
+  .dateWrapper {
+    input {
+      // width: 100%;
+      text-align: center;
+      padding: 10px 0px;
+      border: 2px solid $grey; /* Толщина рамки и цвет */
+
+      &:focus {
+        border-color: $green; /* Цвет рамки при фокусе */
+        outline: none; /* Убираем внешний контур при фокусе */
+      }
+    }
+
+
+    .errorWrapper {
+      position: relative;
+    }
+  }
+}

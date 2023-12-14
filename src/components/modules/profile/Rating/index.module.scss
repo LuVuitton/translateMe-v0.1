@@ -1,0 +1,13 @@
+@import "@/style/variables.module.scss";
+
+.mainWrapper {
+  width: 100%;
+  background-color: $grey;
+
+  .container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}

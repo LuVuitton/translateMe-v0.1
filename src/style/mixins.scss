@@ -1,0 +1,14 @@
+@mixin text-ellipsis($lineCount) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word; 
+  display: -webkit-box;
+  -webkit-line-clamp: $lineCount;
+  -webkit-box-orient: vertical;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
