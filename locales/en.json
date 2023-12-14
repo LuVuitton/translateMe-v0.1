@@ -75,6 +75,9 @@
     "userPhoto": "User photo",
     "noPhoto": "No photo",
     "noDiscription": "No description yet",
+    "contacts": "contacts",
+    "languages": "languages",
+    "openFullProfile": "Open full profile",
     "rating": {
       "userRating": "user rating",
       "raters": "number of raters"

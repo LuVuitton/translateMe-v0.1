@@ -73,6 +73,9 @@
     "complitedAsExecutor": "выполнил заказов",
     "userPhoto": "фото пользователя",
     "noPhoto": "нет фото",
+    "contacts": "контакты",
+    "languages": "языки",
+    "openFullProfile": "Открыть полный профиль",
     "noDiscription": "пока что нет описания",
     "rating": {
       "userRating": "рейтинг пользователя",

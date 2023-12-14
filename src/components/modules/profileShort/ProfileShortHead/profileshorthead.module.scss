@@ -1,0 +1,68 @@
+@import "@/style/variables.module.scss";
+
+.main {
+  border-bottom: 1px solid $line;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 1rem;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  // background-color: azure;
+
+  &Photo {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    // border: 2px solid;
+    border-radius: 50%;
+
+    &Img {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  &Params {
+    display: flex;
+    flex-direction: column;
+    &Title {
+      font-size: $textSmall;
+      color: $greyText;
+    }
+  }
+  &Nav {
+    max-width: 200px;
+    margin-left: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &Link {
+      color: $green;
+      text-align: center;
+      font-size: $textMedium;
+      //   position: relative;
+      &:hover {
+        color: $greenHover;
+      }
+
+      &Icon {
+        position: relative;
+        top: -1px;
+        left: -5px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $sizeMB) {
+    justify-content: center;
+    &Params {
+      justify-content: space-between;
+    }
+    &Nav {
+      margin: auto;
+    }
+  }
+}

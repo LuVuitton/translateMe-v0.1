@@ -1,20 +1,18 @@
 "use client";
 import { useTranslations } from "next-intl";
-import s from "./index.module.scss";
+import s from "./contacts.module.scss";
 import { useGetContactsByIDQuery } from "@/app/api/clientRequests/contacts/contacts.api";
 import { Preloader } from "@/components";
-
 
 export default function Contacts({ userID }: { userID: number }) {
   const { data, isError, isLoading, error } = useGetContactsByIDQuery({
     userID,
   });
 
-  const t = useTranslations("common.contacts")
-  
+  const t = useTranslations("common.contacts");
 
   if (isLoading) {
-    return <Preloader type="local"/>;
+    return <Preloader type="local" />;
   }
   if (isError) {
     return <div>isError</div>;
@@ -35,12 +33,12 @@ export default function Contacts({ userID }: { userID: number }) {
         if (v !== null) {
           gridContactBlocks.push(
             <div key={i} className={s.contactItem}>
-              <span>{t(`${k}`)}</span>
+              <span className={s.contactItemKey}>{t(`${k}`)}:</span>
             </div>
           );
           gridContactBlocks.push(
             <div key={i * 100} className={s.contactItem}>
-              <span>{v}</span>
+              <span className={s.contactItemValue}>{v}</span>
             </div>
           );
         }
@@ -59,9 +57,7 @@ export default function Contacts({ userID }: { userID: number }) {
   } else if (data && "message" in data && data.status === 403) {
     return (
       <div className={s.mainWrapper}>
-        <div className={s.forbiden}>
-        {t("noAccess")}
-        </div>
+        <div className={s.forbiden}>{t("noAccess")}</div>
       </div>
     );
   }

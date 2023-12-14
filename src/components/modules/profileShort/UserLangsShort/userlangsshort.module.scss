@@ -1,23 +1,30 @@
 @import "@/style/variables.module.scss";
 
 .UserLangsWrapper {
-  background-color: $grey;
+& li:not(:nth-last-child(-n + 1)) {
+      border-bottom: 1px solid $line;
+    }
+
   .itemWrapper {
-    padding: 20px;
+    padding: 5px 0;
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    // &:not(:nth-last-child(-n + 2)) {
+      // border-bottom: 1px solid $line;
+    // }
 
     .languageName {
+      font-size: $textMedium;
+
     }
     .proficiency {
-      color: $green;
-      font-size: 0.9rem;
+      color: $greyText;
+      font-size: $textSmall;
     }
   }
 }
 .noLanguages {
-  background-color: $grey;
   width: 100%;
   text-align: center;
   padding: 20px;
