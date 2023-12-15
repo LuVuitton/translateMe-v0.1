@@ -1,6 +1,7 @@
 import { GetByIDRes } from "../../clientRequests/assignment/assignment.api";
 
-const BASE_URL = "http://localhost:3000/assignment";
+// const BASE_URL = "http://localhost:3000/assignment";
+const BASE_URL = "https://translate-me.onrender.com/assignment";
 
 export async function getAssignment({
   assignmentID,

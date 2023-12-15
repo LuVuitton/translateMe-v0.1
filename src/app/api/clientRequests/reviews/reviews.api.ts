@@ -4,7 +4,8 @@ import { parseCookies } from "nookies";
 // const cookies = parseCookies();
 // const token = cookies.nToken;
 
-const BASE_URL = "http://localhost:3000/reviews";
+// const BASE_URL = "http://localhost:3000/reviews";
+const BASE_URL = "https://translate-me.onrender.com/reviews";
 
 export const reviewsApiSlice = createApi({
   reducerPath: "reviewsApi",

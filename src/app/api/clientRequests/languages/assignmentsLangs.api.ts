@@ -4,7 +4,8 @@ import { parseCookies } from "nookies";
 
 
 
-const BASE_URL = "http://localhost:3000/";
+// const BASE_URL = "http://localhost:3000/";
+const BASE_URL = "https://translate-me.onrender.com/";
 
 export const assignmentsLangsApiSlice = createApi({
   reducerPath: "assignmentsLangsApi",

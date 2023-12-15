@@ -5,7 +5,8 @@ import {
   fetchBaseQuery,
 } from "@reduxjs/toolkit/query/react";
 
-const BASE_URL = "http://localhost:3000/auth"; 
+// const BASE_URL = "http://localhost:3000/auth"; 
+const BASE_URL = "https://translate-me.onrender.com/auth"; 
 
 
 // BaseQueryFn тип

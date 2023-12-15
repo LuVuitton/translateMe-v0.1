@@ -2,7 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { parseCookies } from "nookies";
 
 
-const BASE_URL = "http://localhost:3000/candidates";
+// const BASE_URL = "http://localhost:3000/candidates";
+const BASE_URL = "https://translate-me.onrender.com/candidates";
 
 export const candidatesApiSlice = createApi({
   reducerPath: "candidatesApi",

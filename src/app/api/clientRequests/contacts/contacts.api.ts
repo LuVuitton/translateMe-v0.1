@@ -3,7 +3,8 @@ import { parseCookies } from "nookies";
 
 
 
-const BASE_URL = "http://localhost:3000/user-contacts";
+// const BASE_URL = "http://localhost:3000/user-contacts";
+const BASE_URL = "https://translate-me.onrender.com/user-contacts";
 
 export const contactsApiSlice = createApi({
   reducerPath: "contactsApi",

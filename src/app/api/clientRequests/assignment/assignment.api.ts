@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { parseCookies } from "nookies";
-import { Candidate } from "../candidates/candidates.api";
 
-const BASE_URL = "http://localhost:3000/assignment";
+
+// const BASE_URL = "http://localhost:3000/assignment";
+const BASE_URL = "https://translate-me.onrender.com/assignment";
 
 const generateSortQuery = (dto: GetSortedDto) => {
   const limit = dto.limit ? `limit=${dto.limit}&` : "";
