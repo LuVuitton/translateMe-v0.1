@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { parseCookies } from "nookies";
+import { Candidate } from "../candidates/candidates.api";
 
 const BASE_URL = "http://localhost:3000/assignment";
 
@@ -155,6 +156,11 @@ export type GetMyAssignment = {
     assignment_update_date: string;
     required_languages_id: number[];
     customer_languages_id: number[];
+    candidates: {
+    totalCount: number,
+    assignment_id: number,
+    candidates:number[]
+    }
   }[];
 };
 

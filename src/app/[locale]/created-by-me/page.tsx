@@ -9,6 +9,9 @@ import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 
 export default function AssignmentsCreatedByMe() {
   const [shownCandidates, setShownCandidates] = useState<number | null>(null);
+
+  const [active, setActive] = useState<number |null>(null);
+
   const { data, isLoading } = useGetMyAssignmentQuery();
   const t = useTranslations("createdByMe");
   const [listShown, setListShown] = useState<ListShownOptopns>("upcoming");
@@ -17,22 +20,23 @@ export default function AssignmentsCreatedByMe() {
 
   const showCandidatesHandler = (assignmentsID: number) => {
     setShownCandidates(assignmentsID);
+    setActive(assignmentsID);
   };
 
   const switchOptionHandler = (option: ListShownOptopns) => {
     setListShown(option);
     setShownCandidates(null);
+    setActive(null);
   };
 
   data?.data.forEach((e) => {
+    let statusClass = e.assignment_id === active;
+
     const item = (
-      <li key={e.assignment_id} className={s.listItem}>
-        {/* <Link href={`assignments/${e.assignment_id}`}> */}
+      <li key={e.assignment_id} className={s.mainListItem}>
         <div onClick={() => showCandidatesHandler(e.assignment_id)}>
-          <AssignmentShortListItem assignmentData={e} />
+          <AssignmentShortListItem assignmentData={e} isActive={statusClass} />
         </div>
-        {/* </Link> */}
-        {/* <Candidates assignmentID={e.assignment_id} /> */}
       </li>
     );
 
@@ -67,7 +71,7 @@ export default function AssignmentsCreatedByMe() {
         </div>
 
         <div className={s.main}>
-          <ul className={`${s.list} ${s.mainList}`}>
+          <ul className={s.mainList}>
             {listShown === "upcoming" ? upcomingAssignments : closedAssignments}
           </ul>
           <div className={s.mainContainer}>

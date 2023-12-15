@@ -1,12 +1,10 @@
-import {
-  AssignmentListItem,
-  GetMyAssignment,
-} from "@/app/api/clientRequests/assignment/assignment.api";
 import s from "./index.module.scss";
 import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
 import { useTranslations } from "next-intl";
 import { Title } from "@/components";
 import ShortInfo from "./ShortInfo/ShortInfo";
+import { GetMyAssignment } from "@/app/api/clientRequests/assignment/assignment.api";
+import { Candidate } from "@/app/api/clientRequests/candidates/candidates.api";
 
 const AssignmentShortListItem: React.FC<Props> = ({
   assignmentData: {
@@ -22,14 +20,20 @@ const AssignmentShortListItem: React.FC<Props> = ({
     worth,
     assignment_status,
     views,
+    candidates,
   },
+  isActive,
 }) => {
   const t = useTranslations("assignmnentPage");
 
+  
   const creationDate = formatIsoDateToDMHM(assignment_creation_date, "DM");
 
   return (
-    <div className={s.assignmentWrapper}>
+    <div
+      className={`${s.assignmentWrapper} ${isActive ? s.isActiveClass : ""}`}
+    >
+      <div className={s.candidates}>{candidates.totalCount}</div>
       <div className={s.container}>
         <time className={s.posted}>{`${t("posted")}: ${creationDate}`}</time>
         <Title type="small" cut className={s.titleHover}>
@@ -73,5 +77,11 @@ type Props = {
     assignment_update_date: string;
     required_languages_id: number[];
     customer_languages_id: number[];
+    candidates: {
+      totalCount: number;
+      assignment_id: number;
+      candidates: number[];
+    };
   };
+  isActive?: boolean | null;
 };

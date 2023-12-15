@@ -64,13 +64,13 @@ type CandidateCDRes = {
   assignment_id: number;
   user_id: number;
 };
-type GetCandidatesByAsIDRes = {
+export type GetCandidatesByAsIDRes = {
   totalCount: number;
   assignment_id: number;
-  candidates: Candidates[];
+  candidates: Candidate[];
 };
 
-type Candidates = {
+export type Candidate = {
   assignment_id: number;
   apply_time: string;
   candidate_id: number;

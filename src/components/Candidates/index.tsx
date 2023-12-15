@@ -8,10 +8,12 @@ import { useTranslations } from "next-intl";
 import { Preloader, TheButton } from "@/components";
 import { ProfileShort } from "../modules";
 import { Accordion } from "../bootsrtap";
-import { CgSmileNeutral } from "react-icons/cg";
+import AccHead from "./accHead";
+import NoCandidate from "./noCandidate";
 
 const Candidates = ({ assignmentID }: { assignmentID: number }) => {
   const t = useTranslations("candidates");
+  // const [noCandidatesAnimation, setCandidatesAnimation] = useState(false)
 
   const { data, isLoading } = useGetCandidatesByAsIDQuery({
     assignmentID,
@@ -39,13 +41,12 @@ const Candidates = ({ assignmentID }: { assignmentID: number }) => {
           key={`${e.candidate_id}-${e.assignment_id}`}
           eventKey={e.candidate_full_name}
         >
-          <Accordion.Header>
-            <div className={s.candidateWrapper}>
-              <div className={s.name}>{e.candidate_full_name}</div>
-              <div className={s.date}>
-                {t("applied")}: {date}
-              </div>
-            </div>
+          <Accordion.Header >
+            <AccHead
+              candidateFullName={e.candidate_full_name}
+              date={date}
+              dateText={t("applied")}
+            />
           </Accordion.Header>
           <Accordion.Body>
             <ProfileShort userID={e.candidate_id}>
@@ -64,16 +65,11 @@ const Candidates = ({ assignmentID }: { assignmentID: number }) => {
     });
 
     return (
-      <Accordion defaultActiveKey="0" flush>
+      <Accordion defaultActiveKey="0" flush style={{ height: "100%" }} className={s.main}>
         {candidates.length !== 0 ? (
           candidates
         ) : (
-          <div className={s.noCandidates}>
-            <div className={s.noCandidatesIcon}>
-              <CgSmileNeutral />
-            </div>
-            <div className={s.noCandidatesText}> {t("noCandidates")}</div>
-          </div>
+          <NoCandidate text={t("noCandidates")} />
         )}
       </Accordion>
     );
@@ -81,27 +77,3 @@ const Candidates = ({ assignmentID }: { assignmentID: number }) => {
 };
 
 export default Candidates;
-
-{
-  /* <div className={s.itemWrapper} key={i}>
-            <Link href={`profile/${e.candidate_id}`}>
-              <div className={s.candidateWrapper}>
-                <div className={s.name}>{e.candidate_full_name}</div>
-                <div className={s.date}>
-                  {t("applied")}: {date}
-                </div>
-              </div>
-            </Link>
-            <div>{e.isExecutor && t("isCandidate")}</div>
-            <div className={s.btn}>
-              <TheButton
-                btnText={t(e.isExecutor ? "btn.cancel" : "btn.pickOne")}
-                callback={() =>
-                  e.isExecutor ? cancelHandler() : pickHandler(e.candidate_id)
-                }
-                isLoading={pickLoading}
-                color={e.isExecutor ? "red" : "green"}
-              />
-            </div>
-          </div> */
-}

@@ -169,3 +169,21 @@ select:focus,
 textarea {
   font-size: 16px;
 }
+
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: none;
+  border: none;
+  background-color: none;
+}
+
+.accordion-flush .accordion-item .accordion-button,
+.accordion-flush .accordion-item .accordion-button.collapsed {
+  box-shadow: none;
+  border-color: transparent;
+  border: none;
+  background-color: transparent;
+}
+
+

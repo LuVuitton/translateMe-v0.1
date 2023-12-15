@@ -1,2 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
+@import './variables.module.scss';
 
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 23, 23, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: $line;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $greyHover;
+}

@@ -1,61 +1,17 @@
 @import "@/style/variables.module.scss";
 
-.listWrapper {
-  background-color: $grey;
-  padding: 10px;
+// .listWrapper {
+//   background-color: $grey;
+//   padding: 10px;
 
-  .list {
-    .itemWrapper {
-      display: flex;
-      justify-content: space-between;
-      background-color: $white;
-      font-size: $textMedium;
-      align-items: center;
+//   .list {
+//     .itemWrapper {
+//       display: flex;
+//       justify-content: space-between;
+//       background-color: $white;
+//       font-size: $textMedium;
+//       align-items: center;
+//     }
+//   }
+// }
 
-      .candidateWrapper {
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-
-        .name {
-        }
-        .date {
-          font-size: 12px;
-        }
-      }
-      .btn {
-      }
-    }
-  }
-  .noCandidates {
-    padding: 10px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: gray;
-    font-size: 0.9rem;
-
-    &Text {
-    }
-  }
-}
-
-.noCandidatesIcon {
-  text-align: center;
-  font-size: 1.5rem;
-  animation: moveSmiley 0.7s forwards;
-}
-
-@keyframes moveSmiley {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
-  }
-}
