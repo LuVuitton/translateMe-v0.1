@@ -11,8 +11,8 @@ import {
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslations } from "next-intl";
 
-import { SocialAuthBtn } from "@/components/modules/sign-up/SocialAuthBtn/SocialAuthBtn";
-import { AgreementsCheckbox } from "@/components/modules/sign-up/AgreementsCheckbox/AgreementsCheckbox";
+import { SocialAuthBtn } from "@/components/modules/sign-up/socialAuthBtn";
+import { AgreementsCheckbox } from "@/components/modules/sign-up/agreementsCheckbox";
 import { useRegistrationMutation } from "@/app/api/clientRequests/auth/auth.api";
 import { setIsLogged, setUserData } from "@/redux/slices/userSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";

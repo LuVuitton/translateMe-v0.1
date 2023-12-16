@@ -16,7 +16,8 @@ const BASE_URL = "https://translate-me.onrender.com/auth";
 
 export const authApiSlice = createApi({
   reducerPath: "auth",
-  baseQuery: <BaseQueryFn<any, unknown, StandartError>>(
+  // baseQuery: <BaseQueryFn<any, unknown, StandartError>>(
+  baseQuery: (
     fetchBaseQuery({ baseUrl: BASE_URL })
   ),
   endpoints: (builder) => ({

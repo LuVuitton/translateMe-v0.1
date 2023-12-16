@@ -1,7 +1,7 @@
 "use client"
 import { Control, Controller, FieldError } from "react-hook-form";
 import s from "./index.module.scss";
-import TheSelect from "../Select";
+import TheSelect from "../select";
 import { SelectOptions } from "@/helpers/convertDataToSelect";
 
 const FormSelectController: React.FC<WithSelectControllerProps> = ({

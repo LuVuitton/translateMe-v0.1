@@ -6,7 +6,7 @@ import Image from "next/image";
 import usersImg from "../../../../public/icons/users.png";
 import settingImg from "../../../../public/icons/setting.png";
 
-import { Burger } from "./Burger/Burger";
+import { Burger } from "./burger";
 import s from "./index.module.scss";
 import { useGetMeQuery } from "@/app/api/clientRequests/user/user.api";
 import { setIsLogged, setUserData } from "@/redux/slices/userSlice";

@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import { setIsLogged, setUserData } from "@/redux/slices/userSlice";
 import { Link, useRouter } from "@/navigation";
 import { FormInput } from "@/components";
-import { SocialAuthBtn } from "../sign-up/SocialAuthBtn/SocialAuthBtn";
+import { SocialAuthBtn } from "../sign-up/socialAuthBtn";
 
 type Inputs = {
   email: string;

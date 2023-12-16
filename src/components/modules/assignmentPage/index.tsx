@@ -3,13 +3,11 @@ import s from "./index.module.scss";
 import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
 import { getTranslations } from "next-intl/server";
 import dynamic from "next/dynamic";
-import { LanguagesBlock } from "./LanguagesBlock/LanguagesBlock";
+import LanguagesBlock from "./languagesBlock";
 import { Section } from "@/components";
-import Parameters from "./Parameters/Parameters";
-import AssignmentHead from "./AssignmentHead/AssignmentHead";
-import StatusInfo from "./StatusInfo/StatusInfo";
-
-
+import Parameters from "./parameters";
+import AssignmentHead from "./assignmentHead";
+import StatusInfo from "./statusInfo";
 
 export default async function Assignment({ assignmentData }: Props) {
   const t = await getTranslations("assignmnentPage");
@@ -81,7 +79,6 @@ type Props = {
 // its JavaScript code runs and makes the page fully interactive
 // (this process is called hydration in React).
 
-
-const ApplyButton = dynamic(() => import('./ApplyButton/ApplyButton'), {
+const ApplyButton = dynamic(() => import("./applyButton"), {
   ssr: false,
 });

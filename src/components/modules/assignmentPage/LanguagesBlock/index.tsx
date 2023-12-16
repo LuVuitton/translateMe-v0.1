@@ -12,7 +12,7 @@ import { AiOutlineGlobal } from "react-icons/ai";
 let needsLang: JSX.Element[] | undefined;
 let speaksLang: JSX.Element[] | undefined;
 
-export const LanguagesBlock = ({ assignmentID }: LanguagesBlock) => {
+const LanguagesBlock = ({ assignmentID }: LanguagesBlock) => {
   const t = useTranslations("assignmnentPage");
   const commonName = useTranslations("common");
 
@@ -52,6 +52,8 @@ export const LanguagesBlock = ({ assignmentID }: LanguagesBlock) => {
     </div>
   );
 };
+
+export default LanguagesBlock;
 
 type LanguagesBlock = {
   assignmentID: number;

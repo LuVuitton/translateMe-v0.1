@@ -2,13 +2,13 @@ import Image from "next/image";
 import s from "./index.module.scss";
 import noPhotoImg from "../../../../public/icons/user.png";
 import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
-import Contacts from "@/components/modules/profile/Contacts/Contacts";
+import Contacts from "@/components/modules/profile/contacts";
 import { MeResponse } from "@/app/api/clientRequests/user/user.api";
 import { citiesMapping, countriesMapping } from "@/helpers/mappingData";
-import UserLangs from "@/components/modules/profile/UserLangs/UserLangs";
+import UserLangs from "@/components/modules/profile/userLangs";
 import { Link } from "@/navigation";
 
-import Rating from "./Rating/Rating";
+import Rating from "./rating";
 import { getTranslations } from "next-intl/server";
 import { BottomListBlock } from "@/components";
 

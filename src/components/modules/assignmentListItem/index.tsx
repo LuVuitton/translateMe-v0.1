@@ -3,8 +3,8 @@ import s from "./index.module.scss";
 import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
 import { useTranslations } from "next-intl";
 import {  Title } from "@/components";
-import Languages from "./Languages/Languages";
-import AssignmentInfo from "./AssignmentInfo/AssignmentInfo";
+import Languages from "./languages";
+import AssignmentInfo from "./assignmentInfo";
 ;
 
 const AssignmentItem: React.FC<Props> = ({

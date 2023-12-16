@@ -3,7 +3,7 @@ import s from "./index.module.scss";
 import { useGetMyAssignmentQuery } from "@/app/api/clientRequests/assignment/assignment.api";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Candidates, Preloader, Section } from "@/components";
+import { Candidates, Section } from "@/components";
 import { AssignmentShortListItem } from "@/components/modules";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 

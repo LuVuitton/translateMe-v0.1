@@ -1,4 +1,4 @@
-@import "@/style/variables.module.scss";
+@import '../../../../style/variables.module.scss';
 .param {
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
     &Icon {
         font-size: 1.3rem;
         position: relative;
-        top: 2px;
+        top: 0;
     }
     &Title {
         font-size: $textSmall;

@@ -1,4 +1,4 @@
-@import "@/style/variables.module.scss";
+@import '../../../../style/variables.module.scss';
 
 .UserLangsWrapper {
   & li:not(:nth-last-child(-n + 1)) {

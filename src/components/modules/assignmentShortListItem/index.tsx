@@ -2,7 +2,7 @@ import s from "./index.module.scss";
 import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
 import { useTranslations } from "next-intl";
 import { Title } from "@/components";
-import ShortInfo from "./ShortInfo/ShortInfo";
+import ShortInfo from "./shortInfo";
 import { GetMyAssignment } from "@/app/api/clientRequests/assignment/assignment.api";
 import { Candidate } from "@/app/api/clientRequests/candidates/candidates.api";
 
