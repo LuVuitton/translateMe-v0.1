@@ -1,0 +1,41 @@
+@import '../../../../style/variables.module.scss';
+
+.languages {
+  width: 100%;
+  max-width: 600px;
+  min-height: 140px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  text-align: center;
+  position: relative;
+
+  &Item {
+    position: relative;
+    &Icon {
+      position: absolute;
+      font-size: 1.4rem;
+      top: 2px;
+      left: -30px;
+      color: $icons;
+    }
+    &Title {
+      font-size: $textSmall;
+      font-weight: 100;
+    }
+  }
+}
+
+
+
+.languages::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 1px;
+  background-color: $line;
+  // z-index: 1;
+}

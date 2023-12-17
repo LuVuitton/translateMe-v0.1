@@ -1,0 +1,55 @@
+@import '../../../../style/variables.module.scss';
+
+.mainWrapper {
+  // width: 100%;
+
+  .contactsWrapper {
+    // background-color: $grey;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    .contactItem {
+      padding: 5px 0;
+
+      &Key {
+        color: $greyText;
+        font-size: $textSmall;
+      }
+      &Value {
+        font-size: $textMedium;
+      }
+      &:not(:nth-last-child(-n + 2)) {
+        border-bottom: 1px solid $line;
+      }
+
+      &:nth-child(even) {
+        text-align: end;
+      }
+    }
+  }
+
+  .noContacts {
+    // background-color: $grey;
+    text-align: center;
+    padding: 20px;
+    color: $greyText;
+    font-size: $textMedium;
+    
+
+  
+  }
+}
+
+
+
+.iconAdded {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+.iconAccess {
+  font-size: 1.5rem;
+  // position: relative;
+  // top: -1px;
+  //   left: -7px;
+}
