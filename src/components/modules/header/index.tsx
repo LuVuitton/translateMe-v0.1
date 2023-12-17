@@ -9,7 +9,7 @@ import { setIsLogged, setUserData } from "@/redux/slices/userSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { Link, usePathname, useRouter } from "@/navigation";
 import { BtnBack, Preloader } from "@/components";
-import { IconSetting, IconStack } from "@/components/svgs";
+import BtnBurger from "@/components/btnBurger";
 
 const Header = () => {
   const router = useRouter();
@@ -45,7 +45,7 @@ const Header = () => {
   ];
 
   const mappedBtns = links.map((e) => (
-    <Link href={e.href} className={s.btnWrapper}>
+    <Link key={e.href} href={e.href} className={s.btnWrapper}>
       <div className={s.btnTitle}>{t(`${e.text}`)}</div>
     </Link>
   ));
@@ -62,13 +62,13 @@ const Header = () => {
     <div>
       <div className={s.mainWrapper}>
         <BtnBack />
-        <div
+        {/* <div
           className={s.btnWrapper}
           onClick={() => setBurgerIsOpen(!burgerIsOpen)}
         >
           <div className={s.btnTitle}>{t("settings")}</div>
-        </div>
-
+        </div> */}
+        <BtnBurger callback={() => setBurgerIsOpen(!burgerIsOpen)} isOpen={burgerIsOpen}/>
         {mappedBtns}
       </div>
       {burgerIsOpen && (

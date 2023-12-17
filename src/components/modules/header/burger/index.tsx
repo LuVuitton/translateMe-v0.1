@@ -25,6 +25,7 @@ export const Burger = ({ userData, hideBurger, isLogged }: Props) => {
 
   const links = [
     { href: `/profile/${userData?.user_id}`, text: "myProfile" },
+    { href: `/assignments`, text: "assignments" },
     { href: `/edit-profile`, text: "editProfile" },
     { href: `/my-applies`, text: "myApplies" },
     { href: `/created-by-me`, text: "createdbyme" },
