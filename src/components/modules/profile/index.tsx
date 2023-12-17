@@ -9,7 +9,6 @@ import { Link } from "@/navigation";
 
 import Rating from "./rating";
 import { getTranslations } from "next-intl/server";
-import { BottomListBlock } from "@/components";
 import { IconUser } from "@/components/svgs";
 
 export default async function Profile({ userData }: Props) {
@@ -37,24 +36,28 @@ export default async function Profile({ userData }: Props) {
         <div className={s.profileContainer}>
           <div className={s.info}>
             <div className={s.innerBlockWrapper}>
-              <BottomListBlock bottomText={t("location")}>
+              <div>
+                {t("location")}
                 <div>{city ? city : "unknown "}</div>
                 <div>{country ? country : "unknown"}</div>
-              </BottomListBlock>
-              <BottomListBlock bottomText={t("registered")}>
+              </div>
+              <div>
+                {t("registered")}
                 {registration_day}
-              </BottomListBlock>
+              </div>
             </div>
             <div className={s.innerBlockWrapper}>
               <Link href={`/user-assignments/${user_id}`}>
-                <BottomListBlock bottomText={t("createdAsCustomer")}>
+                <div>
+                  {t("createdAsCustomer")}
                   {/* {"created.length"} */}number
-                </BottomListBlock>
+                </div>
               </Link>
               <Link href={`/user-assignments/${user_id}`}>
-                <BottomListBlock bottomText={t("complitedAsExecutor")}>
+                <div>
+                  {t("complitedAsExecutor")}
                   {/* {"complited.length"} */}number
-                </BottomListBlock>
+                </div>
               </Link>
             </div>
           </div>
