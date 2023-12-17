@@ -1,0 +1,11 @@
+@import '../../style/variables.module.scss';
+
+.icon {
+    font-size: 2rem;
+    font-weight: 900;
+
+
+    &:hover {
+        color: $green;
+    }
+}

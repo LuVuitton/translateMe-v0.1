@@ -1,50 +1,48 @@
 // @import '../../style/variables.scss';
 @import "../../../style/variables.module.scss";
 
-
 .mainWrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-  background-color: $greyHover;
+  padding: 0 50px;
+  background-color: #fff;
+  border-bottom: 1px solid $line;
   color: $greyText;
+  font-size: $textMedium;
 
   position: fixed;
   z-index: 2;
   width: 100%;
-  height: 55px; ;
+  height: 55px;
 
-
-  .btnWrapper{
+  .btnWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    flex: 1;
     padding: 10px;
-    width: 24vw;
+    height: 100%;
+    // width: 100%;
 
+    &:hover {
+      background-color: $greyHover;
+    }
 
+    img {
+      width: 30px;
+      height: auto;
+    }
 
-
-  img {
-    width: 30px;
-    height: auto;
-  }
-
-  .btnTitle {
-    text-align: center;
-    @media (max-width: 600px) {
-       display: none;
-        
+    .btnTitle {
+      text-align: center;
+      @media (max-width: 600px) {
+        display: none;
       }
-
+    }
   }
-}
-
 
   @media (max-width: 500px) {
     justify-content: space-between;
-    
   }
 }

@@ -37,7 +37,7 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReduxProvider>
             <div className={s.wrapper}>
-              <Header currentLanguage={locale} />
+              <Header />
               <div className={s.wrapperContent}>{children}</div>
               <Toaster position="top-right" />
               <Footer />

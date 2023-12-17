@@ -8,10 +8,10 @@ import { useGetMeQuery } from "@/app/api/clientRequests/user/user.api";
 import { setIsLogged, setUserData } from "@/redux/slices/userSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { Link, usePathname, useRouter } from "@/navigation";
-import { Preloader } from "@/components";
-import { IconPigMoney, IconSetting } from "@/components/svgs";
+import { BtnBack, Preloader } from "@/components";
+import { IconSetting, IconStack } from "@/components/svgs";
 
-const Header = ({ currentLanguage }: { currentLanguage: string }) => {
+const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations("header");
@@ -35,6 +35,21 @@ const Header = ({ currentLanguage }: { currentLanguage: string }) => {
     router.replace(`${pathname}`, { locale: lang });
   };
 
+  const links = [
+    { href: `/create-assignment`, text: "createAssignment" },
+    { href: `/created-by-me`, text: "createdbyme" },
+    { href: "/assignments", text: "assignments" },
+    { href: `/profile/${userData.data?.user_id}`, text: "myProfile" },
+    { href: `/edit-profile`, text: "editProfile" },
+    { href: `/my-applies`, text: "myApplies" },
+  ];
+
+  const mappedBtns = links.map((e) => (
+    <Link href={e.href} className={s.btnWrapper}>
+      <div className={s.btnTitle}>{t(`${e.text}`)}</div>
+    </Link>
+  ));
+
   if (isLoading) {
     return (
       <div className={s.mainWrapper}>
@@ -46,18 +61,15 @@ const Header = ({ currentLanguage }: { currentLanguage: string }) => {
   return (
     <div>
       <div className={s.mainWrapper}>
+        <BtnBack />
         <div
           className={s.btnWrapper}
           onClick={() => setBurgerIsOpen(!burgerIsOpen)}
         >
-          <IconSetting />
-          <div className={s.btnTitle}>{t("btns.settings")}</div>
+          <div className={s.btnTitle}>{t("settings")}</div>
         </div>
 
-        <Link className={s.btnWrapper} href={"/assignments"}>
-          <IconPigMoney />
-          <div className={s.btnTitle}>{t("btns.assignments")}</div>
-        </Link>
+        {mappedBtns}
       </div>
       {burgerIsOpen && (
         <Burger

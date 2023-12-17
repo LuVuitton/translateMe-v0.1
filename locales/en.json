@@ -136,22 +136,19 @@
     }
   },
   "header": {
-    "btns": {
-      "settings": "Settings",
-      "assignments": "Assignments"
-    },
-    "settings": {
-      "myProfile": "My Profile",
-      "editProfile": "Edit Profile",
-      "myApplies": "My Applies",
-      "createdbyme": "Created by Me",
-      "createAssignment": "Create new assignment",
-      "whywedothis": "Why we do this",
-      "contacts": "Contacts",
-      "changeLanguage": "Change Language",
-      "logOut": "Log Out",
-      "signIn": "Sign In"
-    }
+    "settings": "Settings",
+    "assignments": "Assignments",
+    "back": "Back",
+    "myProfile": "My Profile",
+    "editProfile": "Edit Profile",
+    "myApplies": "My Applies",
+    "createdbyme": "Created by Me",
+    "createAssignment": "Create new assignment",
+    "whywedothis": "Why we do this",
+    "contacts": "Contacts",
+    "changeLanguage": "Change Language",
+    "logOut": "Log Out",
+    "signIn": "Sign In"
   },
 
   "review": {

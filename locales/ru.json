@@ -136,9 +136,8 @@
   "header": {
     "btns": {
       "settings": "Настройки",
-      "assignments": "Все Задачи"
-    },
-    "settings": {
+      "assignments": "Все Задачи",
+      "back": "Назад",
       "myProfile": "Мой Профиль",
       "editProfile": "Редактировать Профиль",
       "myApplies": "Мои Отклики",
@@ -148,8 +147,7 @@
       "contacts": "Контакты",
       "changeLanguage": "Сменить Язык",
       "logOut": "Выйти",
-      "signIn": "Войти"
-    }
+      "signIn": "Войти"}
   },
   "review": {
     "placeholder": "оставь комментарий",

@@ -4,6 +4,7 @@
 .policy {
   display: flex;
   gap: 40px;
+  font-size: $textMedium; 
 
   &Item {
     text-align: center;

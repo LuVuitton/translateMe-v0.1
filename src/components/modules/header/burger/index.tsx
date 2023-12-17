@@ -11,7 +11,7 @@ export const Burger = ({ userData, hideBurger, isLogged }: Props) => {
   const pathname = usePathname();
   const router = useRouter();
   // const t = getTranslations("header.settings");
-  const t = useTranslations("header.settings");
+  const t = useTranslations("header");
   const dispatch = useAppDispatch();
 
   const locale = [

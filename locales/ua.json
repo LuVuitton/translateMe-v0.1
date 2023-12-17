@@ -50,7 +50,8 @@
       "settings":"Налаштування",
       "online-stack":"Зараз поруч",
       "favorites":"Улюблене",
-      "conversations":"Чат"
+      "conversations":"Чат",
+      "back": "Назад"
     }
   }
 }
