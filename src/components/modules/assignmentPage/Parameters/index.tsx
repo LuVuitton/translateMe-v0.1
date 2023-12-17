@@ -7,7 +7,7 @@ import {
   IconPigMoney,
   IconTime,
 } from "@/components/svgs";
-
+ 
 const Parameters = async ({ parameters }: Props) => {
   const t = await getTranslations("assignmnentPage");
   const tCommon = await getTranslations("common");
