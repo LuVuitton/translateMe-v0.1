@@ -36,15 +36,12 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReduxProvider>
-            {/* <SSRProvider> */}
+            <div className={s.wrapper}>
               <Header currentLanguage={locale} />
-              <div className={s.mainContent}>
-                {children}
-                <Footer />
-              </div>
-
+              <div className={s.wrapperContent}>{children}</div>
               <Toaster position="top-right" />
-            {/* </SSRProvider> */}
+              <Footer />
+            </div>
           </ReduxProvider>
         </NextIntlClientProvider>
       </body>

@@ -4,14 +4,14 @@ import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
 import s from "./index.module.scss";
 import Link from "next/link";
 import { Review } from "@/app/api/clientRequests/reviews/reviews.api";
-import noPhoto from "../../../../../public/icons/user.png";
 import Image from "next/image";
+import { IconUser } from "@/components/svgs";
 
 export const ReviewItem = ({
   review_creation_date,
   review_text,
   reviewer_id: reviewer,
-}: Props) => { 
+}: Props) => {
   const { full_name, user_id: reviewer_id, user_photo } = reviewer;
 
   const reviewDate = formatIsoDateToDMHM(review_creation_date, "DMHM");
@@ -23,11 +23,11 @@ export const ReviewItem = ({
           <Link href={`./${reviewer_id}`}>
             <div className={s.photoAndName}>
               <div className={s.photo}>
-                <Image
-                  alt="user photo"
-                  src={user_photo ? user_photo : noPhoto}
-                  width={30}
-                />
+                {user_photo ? (
+                  <Image alt="user photo" src={user_photo} width={30} />
+                ) : (
+                  <IconUser />
+                )}
               </div>
               <div className={s.fullname}> {full_name}</div>
             </div>

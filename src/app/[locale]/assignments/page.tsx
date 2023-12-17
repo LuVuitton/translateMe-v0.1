@@ -1,7 +1,7 @@
 "use client";
 import { useGetSortedAssignmentQuery } from "@/app/api/clientRequests/assignment/assignment.api";
 import { Link } from "@/navigation";
-import {Preloader, Section } from "@/components";
+import { Section } from "@/components";
 import s from "./index.module.scss";
 import { AssignmentItem } from "@/components/modules";
 

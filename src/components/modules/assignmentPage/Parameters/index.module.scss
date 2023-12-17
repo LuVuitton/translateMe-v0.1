@@ -8,13 +8,16 @@
   &Item {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     flex-wrap: wrap;
+
     &Icon {
         font-size: 1.3rem;
         position: relative;
-        top: 0;
+        top: -1px;
+        fill: currentColor;
     }
+  
     &Title {
         font-size: $textSmall;
     }

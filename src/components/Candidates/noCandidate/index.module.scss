@@ -12,9 +12,11 @@
   color: $greyText;
 
   &Icon {
-    text-align: center;
-    font-size: 1.5rem;
     animation: moveSmiley 0.7s forwards;
+    font-size: 2rem;
+    path {
+      fill: currentColor;
+    }
   }
 
   &Text {

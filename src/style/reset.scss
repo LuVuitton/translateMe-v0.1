@@ -105,6 +105,8 @@ section {
 }
 body {
   line-height: 1;
+  color: $blackText;
+
 }
 ol,
 ul {
@@ -135,12 +137,15 @@ a {
 body {
   font-size: 16px;
   line-height: 1.4;
+  height: 100%;
 }
 
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  height: 100%;
+
 }
 
 *,
@@ -184,6 +189,7 @@ textarea {
   border-color: transparent;
   border: none;
   background-color: transparent;
+  color: currentColor;
 }
 
 

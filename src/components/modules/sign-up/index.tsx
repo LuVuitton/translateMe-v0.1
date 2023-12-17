@@ -65,7 +65,7 @@ export default function SignUp() {
 
   if (registrationData.error && "data" in registrationData.error) {
     // понять шо с этим делать
-    toast.error(registrationData.error.data.message);
+    // toast.error(registrationData.error.data.message);
   }
 
   const mappedFormFields = fields.map((e, i) => {

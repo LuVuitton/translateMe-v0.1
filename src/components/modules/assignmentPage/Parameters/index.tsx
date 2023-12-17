@@ -1,9 +1,12 @@
-// import { formatIsoDateToDMHM, minToHours } from "@/helpers/dateConverter";
+import { formatIsoDateToDMHM, minToHours } from "@/helpers/dateConverter";
 import { getTranslations } from "next-intl/server";
 import s from "./index.module.scss";
-import { FiMapPin } from "react-icons/fi";
-import { MdDateRange, MdAccessTime } from "react-icons/md";
-import { TbPigMoney } from "react-icons/tb";
+import {
+  IconDate,
+  IconLocation,
+  IconPigMoney,
+  IconTime,
+} from "@/components/svgs";
 
 const Parameters = async ({ parameters }: Props) => {
   const t = await getTranslations("assignmnentPage");
@@ -17,15 +20,13 @@ const Parameters = async ({ parameters }: Props) => {
     execution_time_minutes,
     worth,
   } = parameters;
-  // const assignmentDate = formatIsoDateToDMHM(assignment_date);
-  // const executionTime = minToHours(execution_time_minutes);
-  const assignmentDate = 'formatIsoDateToDMHM(assignment_date)';
-  const executionTime = 'minToHours(execution_time_minutes)';
+  const assignmentDate = formatIsoDateToDMHM(assignment_date);
+  const executionTime = minToHours(execution_time_minutes);
 
   const elements: Elements = [
     {
       id: 1,
-      icon: <FiMapPin />,
+      icon: <IconLocation />,
       title: t("where"),
       content: [
         { id: 10, text: tCommon(`cities.${city_id}`) },
@@ -35,21 +36,21 @@ const Parameters = async ({ parameters }: Props) => {
     },
     {
       id: 2,
-      icon: <MdDateRange />,
+      icon: <IconDate style={{ fontSize: "1.2rem" }} />,
       title: t("when"),
-      content: [assignmentDate],
+      content: [{ id: 13, text: assignmentDate }],
     },
     {
       id: 3,
-      icon: <MdAccessTime />,
+      icon: <IconTime />,
       title: t("executionTime"),
-      content: [executionTime],
+      content: [{ id: 14, text: executionTime }],
     },
     {
       id: 4,
-      icon: <TbPigMoney />,
+      icon: <IconPigMoney />,
       title: "worth",
-      content: [worth],
+      content: [{ id: 15, text: `${worth} $` }],
     },
   ];
 

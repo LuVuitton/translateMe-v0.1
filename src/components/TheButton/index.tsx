@@ -1,7 +1,6 @@
 "use client";
 import s from "./index.module.scss";
 import {Preloader} from "@/components";
-import { SlActionRedo } from "react-icons/sl";
 
 
 

@@ -2,7 +2,7 @@ import { Title } from "@/components";
 import { Link } from "@/navigation";
 import { getTranslations } from "next-intl/server";
 import s from "./index.module.scss";
-import { BsPostcard } from "react-icons/bs";
+import { IconUser } from "@/components/svgs";
 
 const AssignmentHead = async ({
   assignment_title,
@@ -16,13 +16,14 @@ const AssignmentHead = async ({
     <div className={s.head}>
       <Title type="medium">{assignment_title}</Title>
       <section className={s.headSection}>
-        <span className={s.headSectionIcon}>
-          <BsPostcard />
-        </span>
+
+          
+
 
         <div className={s.headSectionAuthor}>
-          <span>{t("author")}: </span>
           <Link href={`../profile/${customer.customer_id}`}>
+        <IconUser className={s.headSectionAuthorIcon} />
+          {/* <span>{t("author")}: </span> */}
             {customer.full_name}
           </Link>
         </div>

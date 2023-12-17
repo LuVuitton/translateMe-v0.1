@@ -147,7 +147,8 @@
       "whywedothis": "Зачем это все",
       "contacts": "Контакты",
       "changeLanguage": "Сменить Язык",
-      "logOut": "Выйти"
+      "logOut": "Выйти",
+      "signIn": "Войти"
     }
   },
   "review": {
@@ -165,20 +166,22 @@
     }
   },
   "candidates": {
-    "applied": "дата отклика",
+    "applied": "Дата отклика",
     "noCandidates": "пока что нет кандадатов на выполнение",
     "btn": {
       "pickOne": "выбрать",
       "cancel": "отменить"
     },
-    "isCandidate": "выбран как кандидат"
+    "isCandidate": "выбран как кандидат",
+    "isExecutor": "выбран как исполнитель"
   },
   "createdByMe": {
     "status": "статус",
-    "upcoming": "предстоящие",
-    "closed": "прошлые",
-    "chooseAssignmnent":"Выберите задачу"
-
+    "upcoming": "Предстоящие",
+    "closed": "Прошлые",
+    "chooseAssignmnent": "Выберите задачу",
+    "noAssignments": "У Вас пока что нет созданых задач",
+    "createNewAssignment": "Создать новый заказ"
   },
   "common": {
     "statuses": {
@@ -292,6 +295,14 @@
       "58": "Бангалор",
       "59": "Ченнай",
       "60": "Калькутта"
+    }
+  },
+  "footer": {
+    "followUs": "Мы в соцсетях",
+    "policy": {
+      "termsService": "Условия использования",
+      "privacyPolicy": "Политика конфиденциальности",
+      "cookieSettings": "Настройки файлов cookie"
     }
   }
 }

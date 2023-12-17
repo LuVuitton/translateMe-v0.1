@@ -44,7 +44,7 @@
   },
   "assignmnentPage": {
     "created": "created",
-    "posted": "posted",
+    "posted": "Posted",
     "updated": "updated",
     "speaks": "speaks",
     "needs": "needs",
@@ -149,7 +149,8 @@
       "whywedothis": "Why we do this",
       "contacts": "Contacts",
       "changeLanguage": "Change Language",
-      "logOut": "Log Out"
+      "logOut": "Log Out",
+      "signIn": "Sign In"
     }
   },
 
@@ -169,19 +170,22 @@
   },
 
   "candidates": {
-    "applied": "applied",
+    "applied": "Applied",
     "noCandidates": "there are no candidates yet",
     "btn": {
       "pickOne": "pick one",
       "cancel": "cancel"
     },
-    "isCandidate": "currently is candidate"
+    "isCandidate": "is candidate",
+    "isExecutor": "is executor"
   },
   "createdByMe": {
     "status": "status",
-    "upcoming": "upcoming",
-    "closed": "closed",
-    "chooseAssignmnent":"Choose assignmnent"
+    "upcoming": "Upcoming",
+    "closed": "Closed",
+    "chooseAssignmnent": "Choose assignmnent",
+    "noAssignments": "You don't have any assignments here yet",
+    "createNewAssignment": "Create new assignment"
   },
   "common": {
     "statuses": {
@@ -296,6 +300,13 @@
       "59": "Chennai",
       "60": "Kolkata"
     }
-    
+  },
+  "footer": {
+    "followUs": "Follow Us",
+    "policy": {
+      "termsService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy",
+      "cookieSettings": "Cookie Settings"
+    }
   }
 }

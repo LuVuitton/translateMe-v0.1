@@ -1,12 +1,7 @@
 import { Link } from "@/navigation";
 import { getTranslations } from "next-intl/server";
-import {
-  AiOutlineUsergroupAdd,
-  AiOutlineUser,
-  AiOutlineEye,
-  AiOutlineBranches
-} from "react-icons/ai";
 import s from "./index.module.scss";
+import { IconEye, IconStatus, IconUser, IconUsers } from "@/components/svgs";
 
 const StatusInfo = async ({
   assignment_status,
@@ -20,13 +15,15 @@ const StatusInfo = async ({
   const elements = [
     {
       id: 1,
-      icon: <AiOutlineBranches />,
+      icon: <IconStatus style={{ fontSize: "1.9rem" }} />,
       title: t("status"),
       content: tCommon(`statuses.${assignment_status}`),
+      className: s.iconStatus
+
     },
     {
       id: 2,
-      icon: <AiOutlineUser />,
+      icon: <IconUser />,
       title: t("executor"),
       content: executor.executor_id ? (
         <Link href={`../profile/${executor.executor_id}`}>
@@ -35,27 +32,32 @@ const StatusInfo = async ({
       ) : (
         t("noExecutor")
       ),
+      className: s.iconUser
+
     },
     {
       id: 3,
-      icon: <AiOutlineUsergroupAdd />,
+      icon: <IconUsers style={{ fontSize: "2rem" }} />,
       title: t("сandidates"),
       content: candidatesCount,
+      className: s.iconUsers
+
     },
     {
       id: 4,
-      icon: <AiOutlineEye />,
+      icon: <IconEye />,
       title: t("views"),
       content: views,
+      className: s.iconEye
     },
   ];
 
   const statusElements = elements.map((e) => (
     <div className={s.statusItem} key={e.id}>
-      <span className={s.statusItemIcon}>{e.icon}</span>
+      <span className={`${s.statusItemIcon} ${e.className}`}>{e.icon}</span>
       <div className={s.statusItemText}>
-      <div className={s.statusItemTextTitle}>{e.title}:</div>
-      <div className={s.statusItemTextContent}>{e.content}</div>
+        <div className={s.statusItemTextTitle}>{e.title}:</div>
+        <div className={s.statusItemTextContent}>{e.content}</div>
       </div>
     </div>
   ));

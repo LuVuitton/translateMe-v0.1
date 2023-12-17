@@ -1,12 +1,11 @@
 "use client";
 import Image from "next/image";
 import s from "./profileshorthead.module.scss";
-import noPhotoImg from "../../../../../public/icons/user.png";
 import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
 import { useTranslations } from "next-intl";
-import { TheButton, Title } from "@/components";
+import { Title } from "@/components";
 import { Link } from "@/navigation";
-import { ImProfile } from "react-icons/im";
+import { IconUser } from "@/components/svgs";
 
 export default function ProfileShortHead({
   full_name,
@@ -22,12 +21,16 @@ export default function ProfileShortHead({
   return (
     <div className={s.main}>
       <div className={s.mainPhoto}>
-        <Image
-          className={s.mainPhotoImg}
-          fill={true}
-          src={user_photo ? user_photo : noPhotoImg}
-          alt={user_photo ? t("userPhoto") : t("noPhoto")}
-        />
+        {user_photo ? (
+          <Image
+            className={s.mainPhotoImg}
+            fill={true}
+            src={user_photo}
+            alt={user_photo ? t("userPhoto") : t("noPhoto")}
+          />
+        ) : (
+          <IconUser />
+        )}
       </div>
       <div className={s.mainParams}>
         <Title type="small">{full_name}</Title>
@@ -46,7 +49,6 @@ export default function ProfileShortHead({
       </div>
       <div className={s.mainNav}>
         <Link href={`profile/${userID}`} className={s.mainNavLink}>
-          <ImProfile className={s.mainNavLinkIcon} />
           {t("openFullProfile")}
         </Link>
         {children}

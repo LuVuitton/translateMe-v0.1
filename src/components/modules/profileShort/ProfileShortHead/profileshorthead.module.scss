@@ -1,4 +1,4 @@
-@import '../../../../style/variables.module.scss';
+@import "../../../../style/variables.module.scss";
 
 .main {
   border-bottom: 1px solid $line;
@@ -15,17 +15,14 @@
     height: 100px;
     width: 100px;
     position: relative;
-    // border: 2px solid;
-    border-radius: 50%;
-
-    &Img {
-      border-radius: 50%;
-      object-fit: cover;
-    }
+    top: -26px;
+    font-size: 6rem;
+    color: $icons;
   }
   &Params {
     display: flex;
     flex-direction: column;
+    font-size: $textMedium;
     &Title {
       font-size: $textSmall;
       color: $greyText;

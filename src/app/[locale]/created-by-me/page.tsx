@@ -3,28 +3,28 @@ import s from "./index.module.scss";
 import { useGetMyAssignmentQuery } from "@/app/api/clientRequests/assignment/assignment.api";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Candidates, Section } from "@/components";
+import { Candidates, NoAssignmnents, Section } from "@/components";
 import { AssignmentShortListItem } from "@/components/modules";
-import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+import { IconLeft } from "@/components/svgs";
 
 export default function AssignmentsCreatedByMe() {
   const [shownCandidates, setShownCandidates] = useState<number | null>(null);
 
-  const [active, setActive] = useState<number |null>(null);
-
+  const [active, setActive] = useState<number | null>(null);
   const { data, isLoading } = useGetMyAssignmentQuery();
   const t = useTranslations("createdByMe");
-  const [listShown, setListShown] = useState<ListShownOptopns>("upcoming");
+  const [listOption, setListOption] = useState<ListOptionOptopns>("upcoming");
   let upcomingAssignments: JSX.Element[] = [];
   let closedAssignments: JSX.Element[] = [];
+
 
   const showCandidatesHandler = (assignmentsID: number) => {
     setShownCandidates(assignmentsID);
     setActive(assignmentsID);
   };
 
-  const switchOptionHandler = (option: ListShownOptopns) => {
-    setListShown(option);
+  const switchOptionHandler = (option: ListOptionOptopns) => {
+    setListOption(option);
     setShownCandidates(null);
     setActive(null);
   };
@@ -47,6 +47,15 @@ export default function AssignmentsCreatedByMe() {
     }
   });
 
+  const listShown =
+    listOption === "upcoming" && upcomingAssignments.length !== 0 ? (
+      upcomingAssignments
+    ) : listOption === "closed" && closedAssignments.length !== 0 ? (
+      closedAssignments
+    ) : (
+      <NoAssignmnents text={t("noAssignments")} btnText={t("createNewAssignment")} />
+    );
+
   if (isLoading) {
     // return <Preloader type="local" />;
     return <div>loadibg page...</div>;
@@ -57,13 +66,13 @@ export default function AssignmentsCreatedByMe() {
       <Section className={s.section}>
         <div className={s.nav}>
           <div
-            className={s.navItem}
+            className={`${s.navItem} ${listOption==='upcoming'?s.navActive:""}`}
             onClick={() => switchOptionHandler("upcoming")}
           >
             {t("upcoming")}
           </div>
           <div
-            className={s.navItem}
+            className={`${s.navItem} ${listOption==='closed'?s.navActive:""}`}
             onClick={() => switchOptionHandler("closed")}
           >
             {t("closed")}
@@ -72,7 +81,7 @@ export default function AssignmentsCreatedByMe() {
 
         <div className={s.main}>
           <ul className={s.mainList}>
-            {listShown === "upcoming" ? upcomingAssignments : closedAssignments}
+            {listShown}
           </ul>
           <div className={s.mainContainer}>
             <div className={s.mainContainerCandidates}>
@@ -80,9 +89,7 @@ export default function AssignmentsCreatedByMe() {
                 <Candidates assignmentID={shownCandidates} />
               ) : (
                 <div className={s.mainContainerCandidatesChoose}>
-                  <span className={s.mainContainerCandidatesChooseIcon}>
-                    <FaRegArrowAltCircleLeft />
-                  </span>
+                  <IconLeft className={s.mainContainerCandidatesChooseIcon} />
                   <span className={s.mainContainerCandidatesChooseText}>
                     {t("chooseAssignmnent")}
                   </span>
@@ -96,4 +103,4 @@ export default function AssignmentsCreatedByMe() {
   );
 }
 
-type ListShownOptopns = "upcoming" | "closed";
+type ListOptionOptopns = "upcoming" | "closed";

@@ -7,7 +7,7 @@ import {
 import { useTranslations } from "next-intl";
 import s from "./index.module.scss";
 import { Preloader } from "@/components";
-import { AiOutlineGlobal } from "react-icons/ai";
+import { IconLang } from "@/components/svgs";
 
 let needsLang: JSX.Element[] | undefined;
 let speaksLang: JSX.Element[] | undefined;
@@ -34,16 +34,12 @@ const LanguagesBlock = ({ assignmentID }: LanguagesBlock) => {
   return (
     <div className={s.languages}>
       <div className={s.languagesItem}>
-        <span className={s.languagesItemIcon}>
-          <AiOutlineGlobal />
-        </span>
+        <IconLang className={s.languagesItemIcon} />
         <span className={s.languagesItemTitle}>{t("speaks")}: </span>
       </div>
       <div>
         <div className={s.languagesItem}>
-          <span className={s.languagesItemIcon}>
-            <AiOutlineGlobal />
-          </span>
+          <IconLang className={s.languagesItemIcon} />
           <span className={s.languagesItemTitle}>{t("needs")}: </span>
         </div>
       </div>

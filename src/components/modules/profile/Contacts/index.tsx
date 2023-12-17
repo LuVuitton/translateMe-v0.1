@@ -3,8 +3,7 @@ import { useTranslations } from "next-intl";
 import s from "./contacts.module.scss";
 import { useGetContactsByIDQuery } from "@/app/api/clientRequests/contacts/contacts.api";
 import { Preloader } from "@/components";
-import { FaLock } from "react-icons/fa6";
-import { CgSmileNeutral } from "react-icons/cg";
+import { IconNoSmile } from "@/components/svgs";
 
 export default function Contacts({ userID }: { userID: number }) {
   const { data, isError, isLoading, error } = useGetContactsByIDQuery({
@@ -53,10 +52,9 @@ export default function Contacts({ userID }: { userID: number }) {
           <div className={s.contactsWrapper}>{gridContactBlocks}</div>
         ) : (
           <div className={s.noContacts}>
-            <div className={s.iconAdded}>
-              <CgSmileNeutral />
-            </div>
-            {t("notAdded")}
+            <IconNoSmile className={s.iconAdded} />
+
+            <div> {t("notAdded")}</div>
           </div>
         )}
       </div>
@@ -65,9 +63,7 @@ export default function Contacts({ userID }: { userID: number }) {
     return (
       <div className={s.mainWrapper}>
         <div className={s.noContacts}>
-          <div className={s.iconAccess}>
-            <FaLock />
-          </div>
+          <div className={s.iconAccess}>{/* <FaLock /> */}</div>
 
           {t("noAccess")}
         </div>

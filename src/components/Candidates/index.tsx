@@ -13,7 +13,6 @@ import NoCandidate from "./noCandidate";
 
 const Candidates = ({ assignmentID }: { assignmentID: number }) => {
   const t = useTranslations("candidates");
-  // const [noCandidatesAnimation, setCandidatesAnimation] = useState(false)
 
   const { data, isLoading } = useGetCandidatesByAsIDQuery({
     assignmentID,
@@ -41,11 +40,12 @@ const Candidates = ({ assignmentID }: { assignmentID: number }) => {
           key={`${e.candidate_id}-${e.assignment_id}`}
           eventKey={e.candidate_full_name}
         >
-          <Accordion.Header >
+          <Accordion.Header  className={s.header}>
             <AccHead
               candidateFullName={e.candidate_full_name}
               date={date}
               dateText={t("applied")}
+              isExecutor={e.isExecutor}
             />
           </Accordion.Header>
           <Accordion.Body>

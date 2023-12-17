@@ -1,7 +1,7 @@
 import s from "./userlangsshort.module.scss";
 import { useTranslations } from "next-intl";
 import { useGetUserLangsQuery } from "@/app/api/clientRequests/user/user-lang/user-lang.api";
-import { CgSmileNeutral } from "react-icons/cg";
+import { IconNoSmile } from "@/components/svgs";
 
 export default function UserLangsShort({ userID }: { userID: number }) {
   const t = useTranslations("common.languages");
@@ -22,10 +22,8 @@ export default function UserLangsShort({ userID }: { userID: number }) {
   } else {
     return (
       <div className={s.noLanguages}>
-        <div className={s.iconAdded}>
-          <CgSmileNeutral />
-        </div>
-        {t("notAdded")}
+          <IconNoSmile className={s.iconAdded}/>
+      <div>{t("notAdded")}</div>  
       </div>
     );
   }

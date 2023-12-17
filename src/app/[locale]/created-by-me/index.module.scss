@@ -1,4 +1,3 @@
-
 @import "../../../style/variables.module.scss";
 .listWrapper {
   .nav {
@@ -9,21 +8,25 @@
     .navItem {
       height: 55px;
       background-color: $grey;
+      color: $greyText;
       flex-grow: 1;
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: color 0.2s ease; 
       &:hover {
         background-color: $greyHover;
       }
     }
-  }
 
-  // .list {
-  //   & > *:not(:last-child) {
-  //     border-bottom: 1px solid $white;
-  //   }
-  // }
+    .navActive {
+      background-color: $greyHover;
+      color: $blackText;
+      &:hover {
+        background-color: none;
+      }
+    }
+  }
 }
 
 .main {
@@ -70,9 +73,10 @@
 
         &Icon {
           position: relative;
-          top: -1px;
+          top: 0;
           left: -5px;
-          font-size: 1.3rem;
+          font-size: 1.7rem;
+          color: currentColor;
           animation: slideFromLeft 0.5s forwards; /* Продолжительность анимации 0.5 секунды */
         }
         &Text {

@@ -1,3 +1,5 @@
+
+
 @mixin text-ellipsis($lineCount) {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -11,4 +13,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+@mixin animatedHover($color) {
+  &::after {
+    content: "";
+    position: absolute;
+    width: 104%;
+    height: 2px;
+    background-color: $color;
+    bottom: 0;
+    left: -2px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1); 
+    transform-origin: bottom left;
+  }
+
+  transition: color 0.3s ease; 
+
+  &:hover {
+    color: $color;
+
+  }
 }

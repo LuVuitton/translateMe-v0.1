@@ -4,10 +4,9 @@ import { useState } from "react";
 import { useAppDispatch } from "@/hooks/hooks";
 import { UserState, setIsLogged } from "@/redux/slices/userSlice";
 import { Link, usePathname, useRouter } from "@/navigation";
-// import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 
-export const Burger = ({ userData, hideBurger }: Props) => {
+export const Burger = ({ userData, hideBurger, isLogged }: Props) => {
   const [showLanguage, setShowLanguage] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
@@ -30,12 +29,10 @@ export const Burger = ({ userData, hideBurger }: Props) => {
     { href: `/my-applies`, text: "myApplies" },
     { href: `/created-by-me`, text: "createdbyme" },
     { href: `/create-assignment`, text: "createAssignment" },
-    { href: `/whywedothis`, text: "whywedothis" },
-    { href: `/contacts`, text: "contacts" },
   ];
 
   const renderedLinks = links.map((link, index) => (
-    <Link key={index} href={link.href} onClick={()=> hideBurger()}>
+    <Link key={index} href={link.href} onClick={() => hideBurger()}>
       <li className={s.listItem}>{t(link.text)}</li>
     </Link>
   ));
@@ -60,43 +57,27 @@ export const Burger = ({ userData, hideBurger }: Props) => {
     <div className={s.burgerWrapper}>
       <div className={s.burgerContainer}>
         <ul className={s.list}>
-          {userData?.full_name && (
-            <li className={s.listItem}>{userData.full_name}</li>
-          )}
-
+          {userData?.full_name && <li style={{textAlign:"center"}}>{userData.full_name}</li>}
           {renderedLinks}
-          {/* <Link href={`/profile/${userData?.user_id}`}>
-            <li className={s.listItem}>{t("myProfile")}</li>
-          </Link>
-          <Link href={`/edit-profile`}>
-            <li className={s.listItem}>{t("editProfile")}</li>
-          </Link>
-          <Link href={`/my-applies`}>
-            <li className={s.listItem}>{t("myApplies")}</li>
-          </Link>
-          <Link href={`/created-by-me`}>
-            <li className={s.listItem}>{t("createdbyme")}</li>
-          </Link>
-          <Link href={`/create-assignment`}>
-            <li className={s.listItem}>{t("createAssignment")}</li>
-          </Link>
-          <Link href={`/whywedothis`}>
-            <li className={s.listItem}>{t("whywedothis")}</li>
-          </Link>
-          <Link href={`/contacts`}>
-            <li className={s.listItem}>{t("contacts")}</li>
-          </Link> */}
-
           <li
             className={s.listItem}
             onClick={() => setShowLanguage(!showLanguage)}
           >
             {t("changeLanguage")}
           </li>
-
-          <li className={s.listItem} onClick={logOutHandler}>
-            {t("logOut")}
-          </li>
+          {isLogged ? (
+            <li className={s.listItem} onClick={logOutHandler}>
+              {t("logOut")}
+            </li>
+          ) : (
+            <Link
+              key={"/sign-in"}
+              onClick={() => hideBurger()}
+              href={"/sign-in"}
+            >
+              <li className={s.listItem}>{t("signIn")}</li>
+            </Link>
+          )}
         </ul>
         {showLanguage && <ul className={s.languagelist}>{loacaleList}</ul>}
       </div>
@@ -104,8 +85,8 @@ export const Burger = ({ userData, hideBurger }: Props) => {
   );
 };
 
-
 type Props = {
-   userData: UserState ,
-hideBurger: ()=> void
-}
+  userData: UserState;
+  hideBurger: () => void;
+  isLogged: boolean;
+};

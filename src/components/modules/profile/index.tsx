@@ -1,6 +1,5 @@
 import Image from "next/image";
 import s from "./index.module.scss";
-import noPhotoImg from "../../../../public/icons/user.png";
 import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
 import Contacts from "@/components/modules/profile/contacts";
 import { MeResponse } from "@/app/api/clientRequests/user/user.api";
@@ -11,6 +10,7 @@ import { Link } from "@/navigation";
 import Rating from "./rating";
 import { getTranslations } from "next-intl/server";
 import { BottomListBlock } from "@/components";
+import { IconUser } from "@/components/svgs";
 
 export default async function Profile({ userData }: Props) {
   const t = await getTranslations("profilePage");
@@ -60,12 +60,16 @@ export default async function Profile({ userData }: Props) {
           </div>
           <div className={s.photoAndName}>
             <div className={s.photo}>
-              <Image
-                className={s.userImg}
-                fill={true} //заполняет род эл
-                src={user_photo ? user_photo : noPhotoImg}
-                alt={user_photo ? t("userPhoto") : t("noPhoto")}
-              />
+              {user_photo ? (
+                <Image
+                  className={s.userImg}
+                  fill={true} //заполняет род эл
+                  src={user_photo}
+                  alt={user_photo ? t("userPhoto") : t("noPhoto")}
+                />
+              ) : (
+                <IconUser />
+              )}
             </div>
             <div className={s.userName}>{full_name}</div>
           </div>

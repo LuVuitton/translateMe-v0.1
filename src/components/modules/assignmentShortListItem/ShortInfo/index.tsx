@@ -1,14 +1,16 @@
-import { MdDateRange } from "react-icons/md";
-import { IoTimeSharp, IoLocationSharp } from "react-icons/io5";
-import { TbPigMoney } from "react-icons/tb";
-import { BsArrowRightCircle } from "react-icons/bs";
-
 import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
 import { useTranslations } from "next-intl";
 import s from "./index.module.scss";
 import cl from "classnames";
 import { generatelanguagesBlocks } from "@/helpers/generateLanguageBlocks/generateLanguageBlocks";
-import { AiOutlineBranches } from "react-icons/ai";
+import {
+  IconDate,
+  IconLocation,
+  IconPigMoney,
+  IconRight,
+  IconStatus,
+  IconTime,
+} from "@/components/svgs";
 
 const ShortInfo = ({
   assignment_date,
@@ -18,7 +20,7 @@ const ShortInfo = ({
   className,
   needsLang,
   speaksLang,
-  status
+  status,
 }: Props) => {
   const asDay = formatIsoDateToDMHM(assignment_date, "DM");
   const asTime = formatIsoDateToDMHM(assignment_date, "HM");
@@ -31,28 +33,30 @@ const ShortInfo = ({
   return (
     <div className={cl(s.info, className)}>
       <div className={cl(s.infoItem, s.infoItemStatus)}>
-        <AiOutlineBranches className={s.infoItemIcon} />
+        <IconStatus className={s.infoItemIcon} />
         {tCommon(`statuses.${status}`)}
       </div>
       <div className={s.infoItem}>
-        <MdDateRange className={s.infoItemIcon}/>
+        <IconDate className={s.infoItemIcon} />
         {asDay}
       </div>
       <div className={s.infoItem}>
-        <IoTimeSharp className={s.infoItemIcon}/>
+        <IconTime className={s.infoItemIcon} />
+
         {asTime}
       </div>
       <div className={s.infoItem}>
-        <IoLocationSharp className={s.infoItemIcon}/>
+        <IconLocation className={s.infoItemIcon} />
         {country} {city}
       </div>
       <div className={cl(s.infoItem)}>
-        <TbPigMoney style={{ fontSize: "1.1rem" }} className={cl(s.infoItemIcon,s.infoItemIconWorth) }/>
+        <IconPigMoney className={cl(s.infoItemIcon, s.infoItemIconWorth)} />
         {worthCount} $
       </div>
       <div className={s.infoItem}>
         {speaks}
-        <BsArrowRightCircle className={cl( s.infoItemIcon, s.infoItemIconArrow)} />
+        <IconRight className={cl(s.infoItemIcon, s.infoItemIconArrow)} />
+
         {needs}
       </div>
     </div>
