@@ -1,9 +1,0 @@
-@import "../../../style/variables.module.scss";
-
-.errorMessage {
-    position: absolute;
-    top: 103%;
-    left: 1px;
-    font-size: 0.8rem; /* Регулирует размер текста сообщения об ошибке */
-    color: $red; /* Цвет текста ошибки */
-  }
