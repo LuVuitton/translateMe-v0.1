@@ -75,14 +75,20 @@
     "noPhoto": "нет фото",
     "contacts": "контакты",
     "languages": "языки",
-    "openFullProfile": "Открыть полный профиль",
     "noDiscription": "пока что нет описания",
     "rating": {
       "userRating": "рейтинг пользователя",
       "raters": "кол-во оценивших"
     },
-    "author": "Автор задачи"
-  },
+    "author": "Автор задачи",
+    "aboutMeTitle": "О себе",
+    "noAboutMe": "пользователь пока что не добавил ничего о себе",
+    "review": {
+      "reviewTitle": "Отзывы",
+      "placeholder": "Оставь комментарий",
+      "addCommentsBtn": "Добавить комментарий"
+    }
+      },
   "auth": {
     "common": {
       "sign-up-btn": "Зарегистрироваться",
@@ -134,25 +140,20 @@
     }
   },
   "header": {
-    "btns": {
-      "settings": "Настройки",
-      "assignments": "Все Задачи",
-      "back": "Назад",
-      "myProfile": "Мой Профиль",
-      "editProfile": "Редактировать Профиль",
-      "myApplies": "Мои Отклики",
-      "createdbyme": "Созданые мной задачи",
-      "createAssignment": "Создать новую задачу",
-      "whywedothis": "Зачем это все",
-      "contacts": "Контакты",
-      "changeLanguage": "Сменить Язык",
-      "logOut": "Выйти",
-      "signIn": "Войти"}
+    "settings": "Настройки",
+    "assignments": "Все Задачи",
+    "back": "Назад",
+    "myProfile": "Мой Профиль",
+    "editProfile": "Редактировать Профиль",
+    "myApplies": "Мои Отклики",
+    "createdbyme": "Мои Задачи",
+    "createAssignment": "Создать Задачу",
+
+    "changeLanguage": "Сменить Язык",
+    "logOut": "Выйти",
+    "signIn": "Войти"
   },
-  "review": {
-    "placeholder": "оставь комментарий",
-    "addCommentsBtn": "добавить комментарий"
-  },
+
   "editProfile": {
     "backBtn": "назад",
     "options": {
@@ -171,7 +172,8 @@
       "cancel": "отменить"
     },
     "isCandidate": "выбран как кандидат",
-    "isExecutor": "выбран как исполнитель"
+    "isExecutor": "выбран как исполнитель",
+    "openFullProfile": "Открыть полный профиль"
   },
   "createdByMe": {
     "status": "статус",
@@ -301,6 +303,12 @@
       "termsService": "Условия использования",
       "privacyPolicy": "Политика конфиденциальности",
       "cookieSettings": "Настройки файлов cookie"
+    },
+    "main": {
+      "whywedothis": "Зачем мы это делаем",
+      "contacts": "Связаться с нами",
+      "howfindtranslator": "Как найти переводчика",
+      "howtofindwork": "Как найти работу"
     }
   }
 }

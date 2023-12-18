@@ -35,32 +35,23 @@ export default async function Profile({ userData }: Props) {
       <div className={s.container}>
         <div className={s.profileContainer}>
           <div className={s.info}>
-            <div className={s.innerBlockWrapper}>
-              <div>
-                {t("location")}
-                <div>{city ? city : "unknown "}</div>
-                <div>{country ? country : "unknown"}</div>
-              </div>
-              <div>
-                {t("registered")}
-                {registration_day}
-              </div>
-            </div>
-            <div className={s.innerBlockWrapper}>
-              <Link href={`/user-assignments/${user_id}`}>
-                <div>
-                  {t("createdAsCustomer")}
-                  {/* {"created.length"} */}number
-                </div>
-              </Link>
-              <Link href={`/user-assignments/${user_id}`}>
-                <div>
-                  {t("complitedAsExecutor")}
-                  {/* {"complited.length"} */}number
-                </div>
-              </Link>
-            </div>
+            {t("location")}
+            <div>{city ? city : "unknown "}</div>
+            <div>{country ? country : "unknown"}</div>
+
+            {t("registered")}
+            {registration_day}
+
+            <Link href={`/user-assignments/${user_id}`}>
+              {t("createdAsCustomer")}
+              {/* {"created.length"} */}number
+            </Link>
+            <Link href={`/user-assignments/${user_id}`}>
+              {t("complitedAsExecutor")}
+              {/* {"complited.length"} */}number
+            </Link>
           </div>
+
           <div className={s.photoAndName}>
             <div className={s.photo}>
               {user_photo ? (
@@ -89,6 +80,5 @@ export default async function Profile({ userData }: Props) {
 }
 
 type Props = {
-  // userID: number;
   userData: MeResponse;
 };

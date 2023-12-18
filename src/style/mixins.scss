@@ -23,7 +23,7 @@
     width: 104%;
     height: 2px;
     background-color: $color;
-    bottom: 0;
+    bottom: -1px;
     left: -2px;
     transform: scaleX(0);
     transform-origin: bottom right;

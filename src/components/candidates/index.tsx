@@ -10,6 +10,7 @@ import { ProfileShort } from "../modules";
 import { Accordion } from "../bootsrtap";
 import AccHead from "./accHead";
 import NoCandidate from "./noCandidate";
+import { Link } from "@/navigation";
 
 const Candidates = ({ assignmentID }: { assignmentID: number }) => {
   const t = useTranslations("candidates");
@@ -40,7 +41,7 @@ const Candidates = ({ assignmentID }: { assignmentID: number }) => {
           key={`${e.candidate_id}-${e.assignment_id}`}
           eventKey={e.candidate_full_name}
         >
-          <Accordion.Header  className={s.header}>
+          <Accordion.Header className={s.header}>
             <AccHead
               candidateFullName={e.candidate_full_name}
               date={date}
@@ -50,6 +51,9 @@ const Candidates = ({ assignmentID }: { assignmentID: number }) => {
           </Accordion.Header>
           <Accordion.Body>
             <ProfileShort userID={e.candidate_id}>
+              <Link href={`profile/${e.candidate_id}`}>
+                <span className={s.candidateLink}>{t("openFullProfile")}</span>
+              </Link>
               <TheButton
                 btnText={t(e.isExecutor ? "btn.cancel" : "btn.pickOne")}
                 callback={() =>
@@ -65,7 +69,12 @@ const Candidates = ({ assignmentID }: { assignmentID: number }) => {
     });
 
     return (
-      <Accordion defaultActiveKey="0" flush style={{ height: "100%" }} className={s.main}>
+      <Accordion
+        defaultActiveKey="0"
+        flush
+        style={{ height: "100%" }}
+        className={s.main}
+      >
         {candidates.length !== 0 ? (
           candidates
         ) : (

@@ -1,0 +1,10 @@
+@import '../../style/variables.module.scss';
+
+.aboutMe {
+    border: 1px solid $line;
+    border-top: none;
+
+    &Title {
+        color: $greyText;
+    }
+}

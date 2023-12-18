@@ -3,9 +3,10 @@ import s from "./index.module.scss";
 import { useGetMyAssignmentQuery } from "@/app/api/clientRequests/assignment/assignment.api";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Candidates, NoAssignmnents, Section } from "@/components";
+import { Candidates, NoContent, Section } from "@/components";
 import { AssignmentShortListItem } from "@/components/modules";
 import { IconLeft } from "@/components/svgs";
+import Link from "next/link";
 
 export default function AssignmentsCreatedByMe() {
   const [shownCandidates, setShownCandidates] = useState<number | null>(null);
@@ -16,7 +17,6 @@ export default function AssignmentsCreatedByMe() {
   const [listOption, setListOption] = useState<ListOptionOptopns>("upcoming");
   let upcomingAssignments: JSX.Element[] = [];
   let closedAssignments: JSX.Element[] = [];
-
 
   const showCandidatesHandler = (assignmentsID: number) => {
     setShownCandidates(assignmentsID);
@@ -53,7 +53,11 @@ export default function AssignmentsCreatedByMe() {
     ) : listOption === "closed" && closedAssignments.length !== 0 ? (
       closedAssignments
     ) : (
-      <NoAssignmnents text={t("noAssignments")} btnText={t("createNewAssignment")} />
+      <NoContent text={t("noAssignments")}>
+        <Link href={"create-assignment"} className={s.noAssignmnentsLink}>
+          {t("createNewAssignment")}
+        </Link>
+      </NoContent>
     );
 
   if (isLoading) {
@@ -66,13 +70,17 @@ export default function AssignmentsCreatedByMe() {
       <Section className={s.section}>
         <div className={s.nav}>
           <div
-            className={`${s.navItem} ${listOption==='upcoming'?s.navActive:""}`}
+            className={`${s.navItem} ${
+              listOption === "upcoming" ? s.navActive : ""
+            }`}
             onClick={() => switchOptionHandler("upcoming")}
           >
             {t("upcoming")}
           </div>
           <div
-            className={`${s.navItem} ${listOption==='closed'?s.navActive:""}`}
+            className={`${s.navItem} ${
+              listOption === "closed" ? s.navActive : ""
+            }`}
             onClick={() => switchOptionHandler("closed")}
           >
             {t("closed")}
@@ -80,9 +88,7 @@ export default function AssignmentsCreatedByMe() {
         </div>
 
         <div className={s.main}>
-          <ul className={s.mainList}>
-            {listShown}
-          </ul>
+          <ul className={s.mainList}>{listShown}</ul>
           <div className={s.mainContainer}>
             <div className={s.mainContainerCandidates}>
               {shownCandidates ? (

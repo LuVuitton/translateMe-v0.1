@@ -1,0 +1,14 @@
+@import "../../../style/variables.module.scss";
+
+.section {
+  border: 1px solid $line;
+  padding: 1rem;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  &Title {
+    color: $greyText;
+  }
+}

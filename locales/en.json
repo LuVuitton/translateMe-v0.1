@@ -77,12 +77,18 @@
     "noDiscription": "No description yet",
     "contacts": "contacts",
     "languages": "languages",
-    "openFullProfile": "Open full profile",
     "rating": {
       "userRating": "user rating",
       "raters": "number of raters"
     },
-    "author": "Assignment's author"
+    "author": "Assignment's author",
+    "aboutMeTitle": "About Me",
+    "noAboutMe": "the user has not yet added an About Me",
+    "review": {
+      "reviewTitle": "Reviews",
+      "placeholder": "Leave a comment",
+      "addCommentsBtn": "Add comment"
+    }
   },
   "auth": {
     "common": {
@@ -151,10 +157,7 @@
     "signIn": "Sign In"
   },
 
-  "review": {
-    "placeholder": "Leave a comment",
-    "addCommentsBtn": "Add comment"
-  },
+
   "editProfile": {
     "backBtn": "back to options",
     "options": {
@@ -174,7 +177,8 @@
       "cancel": "cancel"
     },
     "isCandidate": "is candidate",
-    "isExecutor": "is executor"
+    "isExecutor": "is executor",
+    "openFullProfile": "Open full profile"
   },
   "createdByMe": {
     "status": "status",
@@ -304,6 +308,12 @@
       "termsService": "Terms of Service",
       "privacyPolicy": "Privacy Policy",
       "cookieSettings": "Cookie Settings"
+    },
+    "main": {
+      "whywedothis": "Why We Do This",
+      "contacts": "Contacts Us",
+      "howfindtranslator": "How to Find a Translator",
+      "howtofindwork": "How to Find Work"
     }
   }
 }

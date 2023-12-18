@@ -1,0 +1,13 @@
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  &Main {
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+  &Review {
+    flex: 1 1 45%;
+  }
+}

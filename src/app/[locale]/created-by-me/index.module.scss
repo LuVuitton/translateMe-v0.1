@@ -1,4 +1,5 @@
 @import "../../../style/variables.module.scss";
+@import "../../../style/mixins.scss";
 .listWrapper {
   .nav {
     display: flex;
@@ -89,6 +90,13 @@
 .section {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.noAssignmnentsLink {
+  color: $green;
+  position: relative;
+
+  @include animatedHover($greenHover)
 }
 
 @keyframes slideFromLeft {

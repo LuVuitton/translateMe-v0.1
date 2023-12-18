@@ -48,9 +48,7 @@ export default function ProfileShortHead({
         </div>
       </div>
       <div className={s.mainNav}>
-        <Link href={`profile/${userID}`} className={s.mainNavLink}>
-          {t("openFullProfile")}
-        </Link>
+   
         {children}
       </div>
     </div>

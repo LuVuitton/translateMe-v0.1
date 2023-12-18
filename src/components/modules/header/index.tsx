@@ -61,14 +61,11 @@ const Header = () => {
   return (
     <div>
       <div className={s.mainWrapper}>
+        <BtnBurger
+          callback={() => setBurgerIsOpen(!burgerIsOpen)}
+          isOpen={burgerIsOpen}
+        />
         <BtnBack />
-        {/* <div
-          className={s.btnWrapper}
-          onClick={() => setBurgerIsOpen(!burgerIsOpen)}
-        >
-          <div className={s.btnTitle}>{t("settings")}</div>
-        </div> */}
-        <BtnBurger callback={() => setBurgerIsOpen(!burgerIsOpen)} isOpen={burgerIsOpen}/>
         {mappedBtns}
       </div>
       {burgerIsOpen && (

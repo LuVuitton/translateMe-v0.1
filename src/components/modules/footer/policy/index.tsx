@@ -1,17 +1,18 @@
 import { Link } from "@/navigation";
 import s from "./index.module.scss";
-
+import { getTranslations } from "next-intl/server";
 
 const policyLinks = [
-  { href: `#`, text: "Privacy Policy" },
-  { href: `#`, text: "Terms of Service" },
-  { href: `#`, text: "Cookie Settings" },
+  { href: `#`, text: "privacyPolicy" },
+  { href: `#`, text: "termsService" },
+  { href: `#`, text: "cookieSettings" },
 ];
 
-const Policy = () => {
+const Policy = async () => {
+  const t = await getTranslations("footer.policy");
   const mapPolicy = policyLinks.map((e) => (
     <Link key={e.text} href={e.href} className={s.policyItem}>
-      {e.text}
+      {t(e.text)}
     </Link>
   ));
 

@@ -1,17 +1,20 @@
 import { Link } from "@/navigation";
 import s from "./index.module.scss";
+import { getTranslations } from "next-intl/server";
 
 const mainLinks = [
-  { href: `/whywedothis`, text: "Why We Do This" },
-  { href: `/contacts`, text: "Contacts Us" },
-  { href: `#`, text: "How to Find a Translator" },
-  { href: `#`, text: "How to Find Work" },
+  { href: `/whywedothis`, text: "whywedothis" },
+  { href: `/contacts`, text: "contacts" },
+  { href: `#`, text: "howfindtranslator" },
+  { href: `#`, text: "howtofindwork" },
 ];
 
-const MainNav = () => {
+const MainNav = async () => {
+  const t = await getTranslations("footer.main");
+
   const mapMain = mainLinks.map((e) => (
     <span key={e.text} className={s.mainItem}>
-      <Link href={e.href}>{e.text}</Link>
+      <Link href={e.href}>{t(e.text)}</Link>
     </span>
   ));
 

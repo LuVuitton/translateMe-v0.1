@@ -4,9 +4,9 @@ const { use } = require("react");
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  images: {
-    domains: ["www.boredpanda.com"],
-  },
+  // images: {
+  //   domains: [""],
+  // },
   reactStrictMode: false,
   swcMinify: true,
 };

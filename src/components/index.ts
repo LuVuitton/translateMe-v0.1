@@ -4,9 +4,10 @@ export { default as Candidates } from "./candidates";
 export { default as Preloader } from "./preloader";
 export { default as Section } from "./section";
 export { default as Title } from "./title";
-export { default as NoAssignmnents } from "./noAssignmnents";
+export { default as NoContent } from "./noContent";
 export { default as BtnBack } from "./btnBack";
 export { default as BurgerBtn } from "./btnBurger";
+export { default as AboutMe } from "./aboutMe";
 
 export { default as DatePicker } from "./form/datePicker";
 export { default as FormInput } from "./form/formInput";
