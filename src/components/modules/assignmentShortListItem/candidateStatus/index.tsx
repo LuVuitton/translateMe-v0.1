@@ -55,7 +55,7 @@ export default CandidateStatus;
 
 type Props = {
   applyDate: string;
-  executor_id: number | null;
+  executor_id: number | null | undefined;
 };
 
 type CandidateDate = {
