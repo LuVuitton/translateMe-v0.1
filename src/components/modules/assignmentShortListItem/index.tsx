@@ -88,7 +88,7 @@ type Props = {
       candidates: number[];
     };
     applyDate?: string;
-    executor_id: number | null;
+    executor_id?: number | null;
   };
   isActive?: boolean | null;
 };
