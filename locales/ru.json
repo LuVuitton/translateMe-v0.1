@@ -170,11 +170,9 @@
     "isCandidate": "выбран как кандидат",
     "isExecutor": "выбран как исполнитель",
     "openFullProfile": "Открыть полный профиль",
-    "statuses": {
-      "underReview": "Ваша заявка рассматривается",
-      "anotherCandidate": "Был выбран другой кандидат",
-      "youAreExecutor": "Вы выбраны как исполнитель"
-    }
+    "underReview": "Ваша заявка рассматривается",
+    "anotherCandidate": "Был выбран другой кандидат",
+    "youAreExecutor": "Вы выбраны как исполнитель"
   },
   "createdByMe": {
     "status": "статус",
