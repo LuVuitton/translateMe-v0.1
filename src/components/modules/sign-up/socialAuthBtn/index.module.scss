@@ -1,4 +1,4 @@
-@import '../../../../style/variables.module.scss';
+@import "../../../../style/variables.module.scss";
 
 .socialAuthWrapper {
   display: flex;
@@ -9,29 +9,21 @@
   margin-bottom: 10px;
 
   .btn {
+    color: $greyText;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-end;
     padding: 10px 30px;
     border-radius: 30px;
     gap: 7px;
     cursor: pointer;
     border: 1px solid $grey;
     width: 270px;
-    // min-width: 270px;
     min-height: 48px;
-    box-shadow: rgba(0, 0, 0, 0.26) 0px 0.637473px 1.14745px -1.125px,
-      rgba(0, 0, 0, 0.24) 0px 1.93094px 3.4757px -2.25px,
-      rgba(0, 0, 0, 0.192) 0px 5.10423px 9.18761px -3.375px,
-      rgba(0, 0, 0, 0.03) 0px 16px 28.8px -4.5px;
-    opacity: 1;
 
     &:hover {
       color: $blackText;
-      box-shadow: rgba(0, 0, 0, 0.26) 0px 0.637473px 1.14745px -1.125px,
-      rgba(0, 0, 0, 0.24) 0px 1.93094px 2.4757px -2.25px,
-      rgba(0, 0, 0, 0.192) 0px 5.10423px 5.18761px -3.375px,
-      rgba(0, 0, 0, 0.03) 0px 16px 28.8px -8.5px;
+      background-color: $white;
     }
 
     .btnImg {

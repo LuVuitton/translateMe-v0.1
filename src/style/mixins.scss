@@ -27,7 +27,7 @@
     left: -2px;
     transform: scaleX(0);
     transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.2s ease-out;
   }
 
   &:hover::after {
@@ -35,7 +35,7 @@
     transform-origin: bottom left;
   }
 
-  transition: color 0.3s ease; 
+  transition: color 0.2s ease; 
 
   &:hover {
     color: $color;

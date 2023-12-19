@@ -53,11 +53,13 @@ export default function AssignmentsCreatedByMe() {
     ) : listOption === "closed" && closedAssignments.length !== 0 ? (
       closedAssignments
     ) : (
+      <div className={s.noAssignments}>
       <NoContent text={t("noAssignments")}>
-        <Link href={"create-assignment"} className={s.noAssignmnentsLink}>
+        <Link href={"create-assignment"} className={s.noAssignmentsLink}>
           {t("createNewAssignment")}
         </Link>
       </NoContent>
+      </div>
     );
 
   if (isLoading) {

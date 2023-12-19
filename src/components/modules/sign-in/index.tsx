@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 import { setIsLogged, setUserData } from "@/redux/slices/userSlice";
 import { Link, useRouter } from "@/navigation";
-import { FormInput } from "@/components";
+import { FormInput, TheButton, Title } from "@/components";
 import { SocialAuthBtn } from "../sign-up/socialAuthBtn";
 
 type Inputs = {
@@ -48,7 +48,6 @@ export default function SignIn() {
     toLogin(formData)
       .unwrap()
       .then((r) => {
-        console.log("fulfilled", r.token);
         const { email, full_name, user_id, user_registration_date } = r;
 
         dispatch(
@@ -62,7 +61,7 @@ export default function SignIn() {
     <div className={s.mainWrapper}>
       <div className={s.container}>
         <div className={s.titleAndDescription}>
-          <h1>{t("common.sign-in-title")}</h1>
+          <Title type="medium">{t("common.sign-in-title")}</Title>
           <p>{t("common.sign-in-description")}</p>
         </div>
         <form className={s.formEl} onSubmit={handleSubmit(onSubmit)}>
@@ -90,9 +89,9 @@ export default function SignIn() {
               </div>
             </div>
             <div className={s.btnWrapper}>
-              <button className={s.submitBtn} type="submit">
-                {t("common.sign-in-btn")}
-              </button>
+              <div className={s.btnWrapperBtn}>
+                <TheButton btnText={t("common.sign-in-btn")} type="submit" />
+              </div>
             </div>
           </div>
         </form>
@@ -100,10 +99,6 @@ export default function SignIn() {
 
         <div className={s.socialsBtns}>
           <SocialAuthBtn socailNetworkName={"Google"} btnPurpose={"sign-in"} />
-          <SocialAuthBtn
-            socailNetworkName={"Facebook"}
-            btnPurpose={"sign-in"}
-          />
         </div>
         <Link href={"/sign-up"} className={s.dontHaveAccoutn}>
           {t("common.dont-have-account")}

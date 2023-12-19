@@ -10,7 +10,6 @@ export default async function ProfilePage(props: Props) {
 
   const userData = await getUser({ userID });
 
-  console.log(userData);
   
 
   return (

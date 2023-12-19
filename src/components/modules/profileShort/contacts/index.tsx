@@ -2,7 +2,10 @@
 import { useTranslations } from "next-intl";
 import s from "./index.module.scss";
 import { useGetContactsByIDQuery } from "@/app/api/clientRequests/contacts/contacts.api";
-import { Preloader } from "@/components";
+import { NoAccess, NoContent, Preloader } from "@/components";
+
+
+
 
 
 export default function Contacts({ userID }: { userID: number }) {
@@ -52,16 +55,15 @@ export default function Contacts({ userID }: { userID: number }) {
         {gridContactBlocks.length > 0 ? (
           <div className={s.contactsWrapper}>{gridContactBlocks}</div>
         ) : (
-          <div className={s.noContacts}>{t("notAdded")}</div>
+          // <div className={s.noContacts}>{t("notAdded")}</div>
+          <NoContent text={t("notAdded")} />
         )}
       </div>
     );
   } else if (data && "message" in data && data.status === 403) {
     return (
       <div className={s.mainWrapper}>
-        <div className={s.forbiden}>
-        {t("noAccess")}
-        </div>
+        <NoAccess text={t("noAccess")} />
       </div>
     );
   }

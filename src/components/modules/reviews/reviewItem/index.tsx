@@ -28,6 +28,7 @@ export const ReviewItem = ({
                 width={30}
                 height={30}
                 className={s.photoAndNamePhoto}
+                quality={50}	
               />
               <div className={s.photoAndNameName}> {full_name}</div>
             </div>

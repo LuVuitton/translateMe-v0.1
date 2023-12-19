@@ -14,7 +14,7 @@ const Reviews = ({ userID }: { userID: number }) => {
     });
 
   return (
-    <Section className={s.section}>
+    <div className={s.section}>
       <div className={s.review}>
         <Title type="small" className={s.reviewTitle}>
           {t("reviewTitle")}
@@ -26,13 +26,9 @@ const Reviews = ({ userID }: { userID: number }) => {
           btnText={t("addCommentsBtn")}
         />
         {isLoading && <div>LOADING!!!!!!...</div>}
-        {data ? (
-          <ReviewsList data={data} />
-        ) : (
-          <div>there is no comment yet</div>
-        )}
+        {data && <ReviewsList data={data} />}
       </div>
-    </Section>
+    </div>
   );
 };
 export default Reviews;

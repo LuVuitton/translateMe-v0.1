@@ -3,6 +3,7 @@ import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
 import { useTranslations } from "next-intl";
 import { Title } from "@/components";
 import ShortInfo from "./shortInfo";
+import CandidateStatus from "./candidateStatus";
 
 const AssignmentShortListItem: React.FC<Props> = ({
   assignmentData: {
@@ -19,19 +20,22 @@ const AssignmentShortListItem: React.FC<Props> = ({
     assignment_status,
     views,
     candidates,
+    applyDate,
+    executor_id,
   },
   isActive,
 }) => {
   const t = useTranslations("assignmnentPage");
 
-  
   const creationDate = formatIsoDateToDMHM(assignment_creation_date, "DM");
 
   return (
     <div
       className={`${s.assignmentWrapper} ${isActive ? s.isActiveClass : ""}`}
     >
-      <div className={s.candidates}>{candidates.totalCount}</div>
+      {candidates && (
+        <div className={s.candidates}>{candidates.totalCount}</div>
+      )}
       <div className={s.container}>
         <time className={s.posted}>{`${t("posted")}: ${creationDate}`}</time>
         <Title type="small" cut className={s.titleHover}>
@@ -49,6 +53,9 @@ const AssignmentShortListItem: React.FC<Props> = ({
           status={assignment_status}
           views={views}
         />
+        {applyDate && (
+          <CandidateStatus applyDate={applyDate} executor_id={executor_id} />
+        )}
       </div>
     </div>
   );
@@ -68,18 +75,20 @@ type Props = {
     assignment_title: string;
     assignment_description: string;
     execution_time_minutes: number;
-    executor_rating_by_customer: null;
-    customer_rating_by_executor: null;
-    views: number;
+    executor_rating_by_customer?: null;
+    customer_rating_by_executor?: null;
+    views?: number;
     assignment_creation_date: string;
-    assignment_update_date: string;
-    required_languages_id: number[];
-    customer_languages_id: number[];
-    candidates: {
+    assignment_update_date?: string;
+    required_languages_id?: number[];
+    customer_languages_id?: number[];
+    candidates?: {
       totalCount: number;
       assignment_id: number;
       candidates: number[];
     };
+    applyDate?: string;
+    executor_id: number | null;
   };
   isActive?: boolean | null;
 };

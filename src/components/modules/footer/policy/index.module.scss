@@ -3,12 +3,21 @@
 
 .policy {
   display: flex;
+  font-size: $textMedium;
+  flex-wrap: wrap;
   gap: 40px;
-  font-size: $textMedium; 
 
   &Item {
     text-align: center;
     position: relative;
     @include animatedHover($greyHover);
+  }
+
+  @media screen and (max-width: $sizeMB) {
+    gap: 0;
+    flex-direction: column;
+    &Item {
+      text-align: start;
+    }
   }
 }

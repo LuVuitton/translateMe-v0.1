@@ -18,6 +18,7 @@ import {
   FormSelectController,
   TheButton,
   DatePicker,
+  Title,
 } from "@/components";
  
 export default function CreateAsignment() {
@@ -43,7 +44,6 @@ export default function CreateAsignment() {
   }, []);
 
   const onSubmit: SubmitHandler<any> = (formData: CreateAssignmentDto) => {
-    console.log(formData);
     const date = new Date(formData.assignment_date);
     const isoDateString = date.toISOString();
 
@@ -110,7 +110,7 @@ export default function CreateAsignment() {
     <div className={s.mainWrapper}>
       <div className={s.container}>
         <div className={s.titleAndDescription}>
-          <h1>{t("title")}</h1>
+          <Title type="small">{t("title")}</Title>
           <p>{t("description")}</p>
         </div>
         <form className={s.formEl} onSubmit={handleSubmit(onSubmit)}>

@@ -76,10 +76,6 @@
     "contacts": "контакты",
     "languages": "языки",
     "noDiscription": "пока что нет описания",
-    "rating": {
-      "userRating": "рейтинг пользователя",
-      "raters": "кол-во оценивших"
-    },
     "author": "Автор задачи",
     "aboutMeTitle": "О себе",
     "noAboutMe": "пользователь пока что не добавил ничего о себе",
@@ -87,8 +83,10 @@
       "reviewTitle": "Отзывы",
       "placeholder": "Оставь комментарий",
       "addCommentsBtn": "Добавить комментарий"
-    }
-      },
+    },
+    "ratingTitle": "Рейтинг",
+    "from": "Из"
+  },
   "auth": {
     "common": {
       "sign-up-btn": "Зарегистрироваться",
@@ -140,7 +138,6 @@
     }
   },
   "header": {
-    "settings": "Настройки",
     "assignments": "Все Задачи",
     "back": "Назад",
     "myProfile": "Мой Профиль",
@@ -148,7 +145,6 @@
     "myApplies": "Мои Отклики",
     "createdbyme": "Мои Задачи",
     "createAssignment": "Создать Задачу",
-
     "changeLanguage": "Сменить Язык",
     "logOut": "Выйти",
     "signIn": "Войти"
@@ -173,7 +169,12 @@
     },
     "isCandidate": "выбран как кандидат",
     "isExecutor": "выбран как исполнитель",
-    "openFullProfile": "Открыть полный профиль"
+    "openFullProfile": "Открыть полный профиль",
+    "statuses": {
+      "underReview": "Ваша заявка рассматривается",
+      "anotherCandidate": "Был выбран другой кандидат",
+      "youAreExecutor": "Вы выбраны как исполнитель"
+    }
   },
   "createdByMe": {
     "status": "статус",

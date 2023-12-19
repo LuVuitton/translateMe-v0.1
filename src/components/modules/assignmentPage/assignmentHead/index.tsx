@@ -23,13 +23,11 @@ const AssignmentHead = async ({
         <div className={s.headSectionAuthor}>
           <Link href={`../profile/${customer.customer_id}`}>
         <IconUser className={s.headSectionAuthorIcon} />
-          {/* <span>{t("author")}: </span> */}
             {customer.full_name}
           </Link>
         </div>
         <data className={s.headSectionDate}>
           <span> {t("posted")}: </span> {creationDate}
-          {/* <span> {t("updated")}:</span> {updateDate} */}
         </data>
       </section>
     </div>

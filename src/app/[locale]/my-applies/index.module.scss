@@ -1,10 +1,12 @@
+@import "../../../style/variables.module.scss";
 .listWrapper {
   display: flex;
   justify-content: center;
   .list {
     max-width: 700px;
-    .listItem {
+    padding: 1rem;
+    &Item {
+
     }
   }
 }
-

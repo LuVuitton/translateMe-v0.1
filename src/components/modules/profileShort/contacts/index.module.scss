@@ -9,6 +9,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 
+
     .contactItem {
       padding: 10px 30px;
       &:not(:nth-last-child(-n + 2)) {
@@ -22,14 +23,4 @@
     }
   }
 
-  .noContacts {
-    background-color: $grey;
-    text-align: center;
-    padding: 20px;
-  }
-  .forbiden {
-    background-color: $grey;
-    text-align: center;
-    padding: 20px;
-  }
 }

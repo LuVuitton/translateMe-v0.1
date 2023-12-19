@@ -31,7 +31,7 @@ import { InputError, TheButton } from "@/components";
       <div className={s.btnWrapper}>
         <TheButton
           btnText="-"
-          color="red"
+          color="grey"
           callback={() => onKeyPress(count - interval)}
         />
       </div>
@@ -49,7 +49,7 @@ import { InputError, TheButton } from "@/components";
       <div className={s.btnWrapper}>
         <TheButton
           btnText="+"
-          color="red"
+          color="grey"
           callback={() => onKeyPress(count + interval)}
         />
       </div>

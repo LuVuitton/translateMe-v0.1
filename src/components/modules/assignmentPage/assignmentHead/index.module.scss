@@ -1,4 +1,5 @@
 @import "../../../../style/variables.module.scss";
+@import "../../../../style/mixins.scss";
 
 .head {
   &Section {
@@ -10,12 +11,9 @@
     font-size: $textMedium;
 
     &Author {
-      padding-right: 40px;
+      padding-right: 2px;
       position: relative;
-
-      &:hover {
-        color: $green;
-      }
+      @include animatedHover($green);
 
       &Icon {
         font-size: 1.4rem;
@@ -34,21 +32,20 @@
   }
 }
 
-.headSectionAuthor::after {
-  content: "";
-  position: absolute;
-  width: 72%;
-  height: 2px;
-  background-color: $line;
-  bottom: 0;
-  left: -6px;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
-}
+// .headSectionAuthor::after {
+//   content: "";
+//   position: absolute;
+//   width: 72%;
+//   height: 2px;
+//   background-color: $line;
+//   bottom: 0;
+//   left: -6px;
+//   transform: scaleX(0);
+//   transform-origin: bottom right;
+//   transition: transform 0.3s ease-out;
+// }
 
-
-.headSectionAuthor:hover::after {
-  transform: scaleX(1); 
-  transform-origin: bottom left;
-}
+// .headSectionAuthor:hover::after {
+//   transform: scaleX(1);
+//   transform-origin: bottom left;
+// }

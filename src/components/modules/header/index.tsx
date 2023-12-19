@@ -7,19 +7,19 @@ import s from "./index.module.scss";
 import { useGetMeQuery } from "@/app/api/clientRequests/user/user.api";
 import { setIsLogged, setUserData } from "@/redux/slices/userSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
-import { Link, usePathname, useRouter } from "@/navigation";
+import { Link } from "@/navigation";
 import { BtnBack, Preloader } from "@/components";
 import BtnBurger from "@/components/btnBurger";
+import useResize from "@/hooks/useResize";
 
 const Header = () => {
-  const router = useRouter();
-  const pathname = usePathname();
   const t = useTranslations("header");
   const [burgerIsOpen, setBurgerIsOpen] = useState(false);
   const userData = useAppSelector((state) => state.user);
 
   const dispatch = useAppDispatch();
   const { data, isLoading, isError } = useGetMeQuery();
+  const size = useResize();
 
   useEffect(() => {
     if (data) {
@@ -31,18 +31,26 @@ const Header = () => {
     }
   }, [data, dispatch]);
 
-  const switchLang = (lang: any) => {
-    router.replace(`${pathname}`, { locale: lang });
+  const logOutHandler = () => {
+    dispatch(setIsLogged({ isLogged: false }));
   };
 
-  const links = [
+  const linksCommon: LinkItem[] = [
+    { href: "/assignments", text: "assignments" },
+  ];
+  const linksAuth: LinkItem[] = [
     { href: `/create-assignment`, text: "createAssignment" },
     { href: `/created-by-me`, text: "createdbyme" },
-    { href: "/assignments", text: "assignments" },
     { href: `/profile/${userData.data?.user_id}`, text: "myProfile" },
     { href: `/edit-profile`, text: "editProfile" },
     { href: `/my-applies`, text: "myApplies" },
   ];
+
+  let links = [...linksCommon];
+
+  if (userData.data) {
+    links = [...linksCommon, ...linksAuth];
+  }
 
   const mappedBtns = links.map((e) => (
     <Link key={e.href} href={e.href} className={s.btnWrapper}>
@@ -59,24 +67,46 @@ const Header = () => {
   }
 
   return (
-    <div>
-      <div className={s.mainWrapper}>
-        <BtnBurger
-          callback={() => setBurgerIsOpen(!burgerIsOpen)}
-          isOpen={burgerIsOpen}
-        />
-        <BtnBack />
-        {mappedBtns}
-      </div>
-      {burgerIsOpen && (
-        <Burger
-          userData={userData.data}
-          hideBurger={() => setBurgerIsOpen(false)}
-          isLogged={userData.isLogged}
-        />
+    <div className={s.mainWrapper}>
+      <BtnBack />
+
+      {size < 800 ? (
+        <>
+          <BtnBurger
+            callback={() => setBurgerIsOpen(!burgerIsOpen)}
+            isOpen={burgerIsOpen}
+          />
+          {burgerIsOpen && (
+            <Burger
+              userData={userData.data}
+              hideBurger={() => setBurgerIsOpen(false)}
+              isLogged={userData.isLogged}
+              links={links}
+            />
+          )}
+        </>
+      ) : (
+        <>
+          {mappedBtns}
+          {!userData.data ? (
+            <Link
+              key={"userData.data"}
+              href={"/sign-in"}
+              className={s.btnWrapper}
+            >
+              <div className={s.btnTitle}>{t("signIn")}</div>
+            </Link>
+          ) : (
+            <div className={s.btnWrapper} onClick={logOutHandler}>
+              {t("logOut")}
+            </div>
+          )}
+        </>
       )}
     </div>
   );
 };
 
 export default Header;
+
+export type LinkItem = { href: string; text: string };

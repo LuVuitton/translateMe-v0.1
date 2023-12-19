@@ -1,7 +1,7 @@
 import s from "./userlangsshort.module.scss";
 import { useTranslations } from "next-intl";
 import { useGetUserLangsQuery } from "@/app/api/clientRequests/user/user-lang/user-lang.api";
-import { IconNoSmile } from "@/components/svgs";
+import { NoContent } from "@/components";
 
 export default function UserLangsShort({ userID }: { userID: number }) {
   const t = useTranslations("common.languages");
@@ -20,11 +20,6 @@ export default function UserLangsShort({ userID }: { userID: number }) {
   if (mappedLanguages && mappedLanguages.length > 0) {
     return <ul className={s.UserLangsWrapper}>{mappedLanguages}</ul>;
   } else {
-    return (
-      <div className={s.noLanguages}>
-          <IconNoSmile className={s.iconAdded}/>
-      <div>{t("notAdded")}</div>  
-      </div>
-    );
+    return <NoContent text={t("notAdded")} />;
   }
 }

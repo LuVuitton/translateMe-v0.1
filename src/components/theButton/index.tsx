@@ -1,8 +1,6 @@
 "use client";
 import s from "./index.module.scss";
-import {Preloader} from "@/components";
-
-
+import { Preloader } from "@/components";
 
 const TheButton: React.FC<Props> = ({
   callback,
@@ -18,6 +16,9 @@ const TheButton: React.FC<Props> = ({
       break;
     case "green":
       btnColor = s.greenBtn;
+      break;
+    case "grey":
+      btnColor = s.greyBtn;
       break;
     default:
       break;
@@ -42,7 +43,7 @@ export default TheButton;
 type Props = {
   btnText: string;
   callback?: () => void;
-  color?: "red" | "green";
+  color?: "red" | "green" | "grey";
   isLoading?: boolean;
   type?: "button" | "submit" | "reset";
 };

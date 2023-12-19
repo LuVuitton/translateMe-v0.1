@@ -9,6 +9,10 @@ export { default as IconLeft } from "./left.svg";
 export { default as IconLocation } from "./location.svg";
 export { default as IconPigMoney } from "./pig.svg";
 export { default as IconSetting } from "./settings.svg";
+export { default as IconLock } from "./lock.svg";
+export { default as IconCheck } from "./check.svg";
+export { default as IconCoffe } from "./coffee.svg";
+export { default as IconApplyTime } from "./timeApply.svg";
 
 export { default as IconLinkedIn } from "./linkedin.svg";
 export { default as IconTelegram } from "./telegram.svg";

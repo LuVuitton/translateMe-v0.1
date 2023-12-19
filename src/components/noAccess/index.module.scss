@@ -1,0 +1,41 @@
+@import "../../style/variables.module.scss";
+
+.noAccess {
+  padding: 10px;
+  // height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  color: $greyText;
+  text-align: center;
+  font-size: $textMedium;
+
+  &Icon {
+    animation: rotateLock 0.7s ease alternate; /* Анимация с помощью keyframes */
+    font-size: 2rem;
+    // path {
+    //   fill: currentColor;
+    // }
+  }
+
+  &Text {
+  }
+}
+
+@keyframes rotateLock {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

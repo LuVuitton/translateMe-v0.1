@@ -26,7 +26,7 @@ const StatusInfo = async ({
       icon: <IconUser />,
       title: t("executor"),
       content: executor.executor_id ? (
-        <Link href={`../profile/${executor.executor_id}`}>
+        <Link href={`../profile/${executor.executor_id}`} className={s.executor}>
           {executor.full_name}
         </Link>
       ) : (

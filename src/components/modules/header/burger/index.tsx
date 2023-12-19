@@ -5,12 +5,12 @@ import { useAppDispatch } from "@/hooks/hooks";
 import { UserState, setIsLogged } from "@/redux/slices/userSlice";
 import { Link, usePathname, useRouter } from "@/navigation";
 import { useTranslations } from "next-intl";
+import { LinkItem } from "..";
 
-export const Burger = ({ userData, hideBurger, isLogged }: Props) => {
+export const Burger = ({ userData, hideBurger, isLogged, links }: Props) => {
   const [showLanguage, setShowLanguage] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-  // const t = getTranslations("header.settings");
   const t = useTranslations("header");
   const dispatch = useAppDispatch();
 
@@ -23,14 +23,7 @@ export const Burger = ({ userData, hideBurger, isLogged }: Props) => {
     { lang: "Русский", value: "ru" },
   ];
 
-  const links = [
-    { href: `/profile/${userData?.user_id}`, text: "myProfile" },
-    { href: `/assignments`, text: "assignments" },
-    { href: `/edit-profile`, text: "editProfile" },
-    { href: `/my-applies`, text: "myApplies" },
-    { href: `/created-by-me`, text: "createdbyme" },
-    { href: `/create-assignment`, text: "createAssignment" },
-  ];
+
 
   const renderedLinks = links.map((link, index) => (
     <Link key={index} href={link.href} onClick={() => hideBurger()}>
@@ -90,4 +83,5 @@ type Props = {
   userData: UserState;
   hideBurger: () => void;
   isLogged: boolean;
+  links: LinkItem[]
 };

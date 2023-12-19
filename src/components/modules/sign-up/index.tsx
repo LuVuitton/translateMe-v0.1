@@ -20,7 +20,7 @@ import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { Link, useRouter } from "@/navigation";
 import { toast } from "react-hot-toast";
 import { SignUpFormSchema } from "@/helpers/formScheme/SignUpFormSchema";
-import { FormInput, TheButton } from "@/components";
+import { FormInput, TheButton, Title } from "@/components";
 
 const fields = [
   { type: "text", fieldName: "full_name" },
@@ -89,7 +89,7 @@ export default function SignUp() {
     <div className={s.mainWrapper}>
       <div className={s.container}>
         <div className={s.titleAndDescription}>
-          <h1>{t("common.regestration-title")}</h1>
+          <Title type="medium">{t("common.regestration-title")}</Title>
           <p>{t("common.registration-description")}</p>
         </div>
         <form className={s.formEl} onSubmit={handleSubmit(onSubmit)}>
@@ -104,7 +104,9 @@ export default function SignUp() {
             />
 
             <div className={s.btnWrapper}>
-              <TheButton type="submit" btnText={t("common.sign-up-btn")} />
+              <div className={s.btnWrapperBtn}>
+                <TheButton type="submit" btnText={t("common.sign-up-btn")} />
+              </div>
             </div>
           </div>
         </form>
@@ -113,10 +115,6 @@ export default function SignUp() {
 
         <div className={s.socialsBtns}>
           <SocialAuthBtn socailNetworkName={"Google"} btnPurpose={"sign-up"} />
-          <SocialAuthBtn
-            socailNetworkName={"Facebook"}
-            btnPurpose={"sign-up"}
-          />
         </div>
 
         <Link href={"/sign-in"} className={s.alreadyHaveAccoutn}>

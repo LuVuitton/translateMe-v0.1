@@ -26,9 +26,11 @@
       text-align: center;
       justify-content: center;
       font-size: 1.5rem;
-      color: $blackText;
+      color: $greyText;
       height: 100%;
       width: 100%;
+      border: 2px solid $line;
+      border-radius: 10px;
       &:focus {
         outline: 2px solid $green;
     }

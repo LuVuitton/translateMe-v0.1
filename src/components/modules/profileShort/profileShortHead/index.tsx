@@ -4,8 +4,7 @@ import s from "./profileshorthead.module.scss";
 import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
 import { useTranslations } from "next-intl";
 import { Title } from "@/components";
-import { Link } from "@/navigation";
-import { IconUser } from "@/components/svgs";
+import noPhoto from "../../../../../public/noPhoto.jpeg";
 
 export default function ProfileShortHead({
   full_name,
@@ -21,36 +20,37 @@ export default function ProfileShortHead({
   return (
     <div className={s.main}>
       <div className={s.mainPhoto}>
-        {user_photo ? (
-          <Image
-            className={s.mainPhotoImg}
-            fill={true}
-            src={user_photo}
-            alt={user_photo ? t("userPhoto") : t("noPhoto")}
-          />
-        ) : (
-          <IconUser />
-        )}
+        <Image
+          className={s.mainPhotoImg}
+          fill={true}
+          src={user_photo ? user_photo : noPhoto}
+          alt={user_photo ? t("userPhoto") : t("noPhoto")}
+        />
       </div>
       <div className={s.mainParams}>
         <Title type="small">{full_name}</Title>
+        <div>
+          <span className={s.mainParamsTitle}> {t("ratingTitle")}:</span>
+          <span> ???</span>
+        </div>
         <div>
           <span className={s.mainParamsTitle}> {t("registered")}:</span>
           <span> {registration_day}</span>
         </div>
         <div>
           <span className={s.mainParamsTitle}>{t("createdAsCustomer")}:</span>
-          <span> ??</span>
+          <span> ???</span>
         </div>
         <div>
           <span className={s.mainParamsTitle}>{t("complitedAsExecutor")}:</span>
-          <span> ??</span>
+          <span> ???</span>
+        </div>
+        <div>
+          <span className={s.mainParamsTitle}>{t("from")}:</span>
+          <span> ???</span>
         </div>
       </div>
-      <div className={s.mainNav}>
-   
-        {children}
-      </div>
+      <div className={s.mainNav}>{children}</div>
     </div>
   );
 }

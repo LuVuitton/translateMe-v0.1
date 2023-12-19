@@ -1,12 +1,17 @@
 @import "../../../style/variables.module.scss";
 
-
 .mainWrapper {
-    margin-bottom: 1.5rem; /* Регулирует расстояние между элементами */
-    width: 100%;
-    position: relative; //errors
+  margin-bottom: 1.5rem;
+  width: 100%;
+  position: relative; //errors
 
-.backgroundColor {
-    background: $red;
+  .backgroundColor {
+    background: $grey;
+    border-radius: 0 8px 8px 0;
+  }
+
+&:focus {
+
+  border-color: red;
 }
 }

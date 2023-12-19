@@ -77,10 +77,6 @@
     "noDiscription": "No description yet",
     "contacts": "contacts",
     "languages": "languages",
-    "rating": {
-      "userRating": "user rating",
-      "raters": "number of raters"
-    },
     "author": "Assignment's author",
     "aboutMeTitle": "About Me",
     "noAboutMe": "the user has not yet added an About Me",
@@ -88,7 +84,9 @@
       "reviewTitle": "Reviews",
       "placeholder": "Leave a comment",
       "addCommentsBtn": "Add comment"
-    }
+    },
+    "ratingTitle": "Rating",
+    "from": "From"
   },
   "auth": {
     "common": {
@@ -142,21 +140,17 @@
     }
   },
   "header": {
-    "settings": "Settings",
     "assignments": "Assignments",
     "back": "Back",
     "myProfile": "My Profile",
     "editProfile": "Edit Profile",
     "myApplies": "My Applies",
-    "createdbyme": "Created by Me",
-    "createAssignment": "Create new assignment",
-    "whywedothis": "Why we do this",
-    "contacts": "Contacts",
+    "createdbyme": "My Assignments",
+    "createAssignment": "Create Assignment",
     "changeLanguage": "Change Language",
     "logOut": "Log Out",
     "signIn": "Sign In"
   },
-
 
   "editProfile": {
     "backBtn": "back to options",
@@ -170,7 +164,7 @@
   },
 
   "candidates": {
-    "applied": "Applied",
+    "applied": "Applied on",
     "noCandidates": "there are no candidates yet",
     "btn": {
       "pickOne": "pick one",
@@ -178,7 +172,12 @@
     },
     "isCandidate": "is candidate",
     "isExecutor": "is executor",
-    "openFullProfile": "Open full profile"
+    "openFullProfile": "Open full profile",
+
+     "underReview": "Your request is still under review",
+     "anotherCandidate":"Another candidate has been selected",
+     "youAreExecutor":"You have been selected as the executor"
+
   },
   "createdByMe": {
     "status": "status",

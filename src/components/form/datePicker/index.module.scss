@@ -2,6 +2,7 @@
 
 .mainWrapper {
   display: flex;
+  padding-top: 1rem;
 
   .desriptiom {
     display: flex;
@@ -9,14 +10,16 @@
     flex-grow: 1;
     font-size: 0.9rem;
     font-weight: 300;
-    color: #85898e;
+    color: $greyText;
   }
   .dateWrapper {
     input {
       // width: 100%;
+      color: $greyText;
       text-align: center;
       padding: 10px 0px;
-      border: 2px solid $grey; /* Толщина рамки и цвет */
+      border: 2px solid $line; /* Толщина рамки и цвет */
+      border-radius: 10px;
 
       &:focus {
         border-color: $green; /* Цвет рамки при фокусе */

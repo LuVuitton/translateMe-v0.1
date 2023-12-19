@@ -9,15 +9,16 @@
   align-items: center;
   gap: 15px;
   flex-wrap: wrap;
-  // background-color: azure;
 
   &Photo {
     height: 100px;
     width: 100px;
     position: relative;
-    top: -26px;
-    font-size: 6rem;
-    color: $icons;
+
+    &Img {
+      object-fit: cover;
+      border-radius: 50%;
+    }
   }
   &Params {
     display: flex;

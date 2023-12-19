@@ -6,6 +6,7 @@ import { useId } from "react";
 import { InputError } from "@/components";
 import { FieldError } from "react-hook-form";
 import { SelectOptions } from "@/helpers/convertDataToSelect";
+import scssVars from "../../../style/variables.module.scss";
 
 const IndicatorsContainer = (
   props: IndicatorsContainerProps<{ label: string; value: number }, true>
@@ -28,8 +29,8 @@ export default function TheSelect({
   error,
   errorMessage,
 }: any) {
-  const onChangeHandler = (e:any) => {
-  // const onChangeHandler = (e: number | number[]) => {
+  const onChangeHandler = (e: any) => {
+    // const onChangeHandler = (e: number | number[]) => {
     let selectedValues: number | number[];
 
     if (Array.isArray(e)) {
@@ -37,9 +38,6 @@ export default function TheSelect({
     } else {
       selectedValues = e.value;
     }
-
-    onChange(selectedValues);
-    console.log("hello");
   };
 
   return (
@@ -53,39 +51,29 @@ export default function TheSelect({
         noOptionsMessage={() => noOptionsMessage}
         isMulti={isMulti}
         options={options}
-        // styles={{
-        //   option: (base) => ({
-        //     ...base,
-        //     // color: "#17161b",
-        //   }),
-        //   control: (base, state) => ({
-        //     ...base,
-        //     // border: "2px solid white",
-        //     // ":hover": {
-        //       // border: "2px solid #47a085",
-        //     // },
-        //     // padding: "none",
-        //     // boxShadow: "none",
-        //     // borderRadius: "none",
-        //     // ...(state.isFocused && { border: "2px solid #47a085" }),
-        //   }),
-        //   valueContainer: (base) => ({
-        //     ...base,
-        //     // color: "#94292b",
-        //   }),
-        //   indicatorSeparator: () => ({}),
-        //   multiValueLabel: (base) => ({
-        //     ...base,
-        //     // color: "#17161b",
-        //     // padding: "5px",
-        //   }),
-        //   placeholder: (base) => ({
-        //     ...base,
-        //     // fontSize: "13px",
-        //     // fontWeight: "400",
-        //     // color: "#6c6d6c",
-        //   }),
-        // }}
+        styles={{
+          // @ts-ignore
+          control: (baseStyles, state) => ({
+            ...baseStyles,
+            border: `2px solid ${
+              state.isFocused ? scssVars.green : scssVars.line
+            }`,
+            borderRadius: "10px",
+            ":hover": {
+              border: `2px solid ${
+                state.isFocused ? scssVars.green : scssVars.line
+              }`,
+            },
+            boxShadow: `none`,
+            color: `${scssVars.greyText}`
+          }),
+          // @ts-ignore
+          option: (baseStyles, state) => ({
+            ...baseStyles,
+            ":hover": { backgroundColor: scssVars.line },
+            backgroundColor: state.isSelected && scssVars.line
+          }),
+        }}
       />
       <InputError
         error={error}

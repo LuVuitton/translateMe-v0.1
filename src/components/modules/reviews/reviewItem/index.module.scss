@@ -24,6 +24,8 @@
         gap: 10px;
         &Photo {
           border-radius: 50%;
+          object-fit: cover;
+
         }
         &Name {
           padding: 0 5px;

@@ -1,13 +1,13 @@
 "use client";
 
 import s from "./profileshort.module.scss";
-import Contacts from "@/components/modules/profile/contacts";
 import { useGetUserQuery } from "@/app/api/clientRequests/user/user.api";
 import Rating from "./rating";
 import { useTranslations } from "next-intl";
 import UserLangsShort from "./userLangsShort";
 import {Title } from "@/components";
 import ProfileShortHead from "./profileShortHead";
+import Contacts from "./contacts";
 
 export default function ProfileShort({ userID, children }: Props) {
   const t = useTranslations("profilePage");

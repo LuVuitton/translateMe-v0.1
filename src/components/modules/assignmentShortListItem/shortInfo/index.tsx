@@ -27,8 +27,13 @@ const ShortInfo = ({
   const tCommon = useTranslations("common");
   const country = tCommon(`countries.${country_id}`);
   const city = tCommon(`cities.${city_id}`);
-  const needs = generatelanguagesBlocks(needsLang, "small");
-  const speaks = generatelanguagesBlocks(speaksLang, "small");
+  let needs: JSX.Element[] = [];
+  let speaks: JSX.Element[] = [];
+
+  if (needsLang && speaksLang) {
+    needs = generatelanguagesBlocks(needsLang, "small");
+    speaks = generatelanguagesBlocks(speaksLang, "small");
+  }
 
   return (
     <div className={cl(s.info, className)}>
@@ -55,8 +60,9 @@ const ShortInfo = ({
       </div>
       <div className={s.infoItem}>
         {speaks}
-        <IconRight className={cl(s.infoItemIcon, s.infoItemIconArrow)} />
-
+        {needsLang && speaksLang && (
+          <IconRight className={cl(s.infoItemIcon, s.infoItemIconArrow)} />
+        )}
         {needs}
       </div>
     </div>
@@ -71,8 +77,8 @@ type Props = {
   country_id: number;
   city_id: number;
   className?: string;
-  needsLang: number[];
-  speaksLang: number[];
+  needsLang?: number[];
+  speaksLang?: number[];
   status: number;
-  views: number;
+  views?: number;
 };

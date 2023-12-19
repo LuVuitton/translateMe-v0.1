@@ -92,12 +92,21 @@
   padding-bottom: 0.5rem;
 }
 
-.noAssignmnentsLink {
+
+.noAssignments {
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+  &Link {
   color: $green;
   position: relative;
 
   @include animatedHover($greenHover)
 }
+}
+
+
 
 @keyframes slideFromLeft {
   0% {

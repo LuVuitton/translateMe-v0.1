@@ -1,5 +1,4 @@
 @import "../../../style/variables.module.scss";
-// @import '@/style/variables.module.scss';
 
 .mainWrapper {
   display: flex;
@@ -12,18 +11,11 @@
     max-width: 450px;
 
     .titleAndDescription {
-      padding: 20px;
+      padding-top: 20px;
       text-align: center;
-      text-transform: uppercase;
-      background-color: $red;
-      h1 {
-        font-size: 1.4rem;
-        font-weight: 600;
-        margin-bottom: 5px;
-      }
       p {
-        color: $grey;
-        font-size: 0.8rem;
+        color: $greyText;
+        font-size: $textSmall;
       }
     }
 
@@ -34,7 +26,6 @@
         flex-direction: column;
         width: 100%;
         padding: 20px;
-        background-color: $grey;
         margin-bottom: 20px;
 
         .btnWrapper {
@@ -43,9 +34,9 @@
           padding-top: 20px;
         }
         .disabledBtn {
-          color:$grey;
+          color: $grey;
           &:hover {
-            color:$greyHover;
+            color: $greyHover;
           }
         }
       }
