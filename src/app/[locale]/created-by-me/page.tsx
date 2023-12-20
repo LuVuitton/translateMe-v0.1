@@ -3,9 +3,8 @@ import s from "./index.module.scss";
 import { useGetMyAssignmentQuery } from "@/app/api/clientRequests/assignment/assignment.api";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Candidates, NoContent, Section } from "@/components";
+import { Candidates, ChooseOne, NoContent, Section } from "@/components";
 import { AssignmentShortListItem } from "@/components/modules";
-import { IconLeft } from "@/components/svgs";
 import Link from "next/link";
 
 export default function AssignmentsCreatedByMe() {
@@ -54,11 +53,11 @@ export default function AssignmentsCreatedByMe() {
       closedAssignments
     ) : (
       <div className={s.noAssignments}>
-      <NoContent text={t("noAssignments")}>
-        <Link href={"create-assignment"} className={s.noAssignmentsLink}>
-          {t("createNewAssignment")}
-        </Link>
-      </NoContent>
+        <NoContent text={t("noAssignments")}>
+          <Link href={"create-assignment"} className={s.noAssignmentsLink}>
+            {t("createNewAssignment")}
+          </Link>
+        </NoContent>
       </div>
     );
 
@@ -96,12 +95,7 @@ export default function AssignmentsCreatedByMe() {
               {shownCandidates ? (
                 <Candidates assignmentID={shownCandidates} />
               ) : (
-                <div className={s.mainContainerCandidatesChoose}>
-                  <IconLeft className={s.mainContainerCandidatesChooseIcon} />
-                  <span className={s.mainContainerCandidatesChooseText}>
-                    {t("chooseAssignmnent")}
-                  </span>
-                </div>
+                <ChooseOne text={t("chooseAssignmnent")} direction="left" />
               )}
             </div>
           </div>

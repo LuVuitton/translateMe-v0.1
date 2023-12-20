@@ -1,0 +1,60 @@
+.choose {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &Icon {
+    position: relative;
+    top: -2px;
+    left: -5px;
+    font-size: 1.7rem;
+    color: currentColor;
+
+    &Left {
+      animation: slideFromLeft 0.8s forwards;
+    }
+    &Up {
+      animation: slideFromUp 0.8s forwards;
+    }
+  }
+  &Text {
+  }
+}
+
+@keyframes slideFromUp {
+  0% {
+    transform: translateY(-20%);
+  }
+  25% {
+    transform: translateY(20%);
+  }
+  50% {
+    transform: translateY(-20%);
+  }
+
+  75% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-10%);
+  }
+  25% {
+    transform: translateX(10%);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+
+  75% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

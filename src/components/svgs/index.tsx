@@ -13,6 +13,8 @@ export { default as IconLock } from "./lock.svg";
 export { default as IconCheck } from "./check.svg";
 export { default as IconCoffe } from "./coffee.svg";
 export { default as IconApplyTime } from "./timeApply.svg";
+export { default as IconPhone } from "./phone.svg";
+export { default as IconUp } from "./up.svg";
 
 export { default as IconLinkedIn } from "./linkedin.svg";
 export { default as IconTelegram } from "./telegram.svg";

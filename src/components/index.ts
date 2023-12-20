@@ -9,6 +9,7 @@ export { default as NoAccess } from "./noAccess";
 export { default as BtnBack } from "./btnBack";
 export { default as BurgerBtn } from "./btnBurger";
 export { default as AboutMe } from "./aboutMe";
+export { default as ChooseOne } from "./chooseOne";
 
 export { default as DatePicker } from "./form/datePicker";
 export { default as FormInput } from "./form/formInput";

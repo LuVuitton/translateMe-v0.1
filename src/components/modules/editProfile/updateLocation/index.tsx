@@ -16,7 +16,7 @@ import { UpdateProfileInfoSchema } from "../../../../helpers/formScheme/UpdatePr
 import { useRouter } from "@/navigation";
 import { FormInput, FormSelectController, TheButton } from "@/components";
 
-export const UpdateProfileInfo = () => {
+export const UpdateLocation = () => {
   const {
     register,
     handleSubmit,

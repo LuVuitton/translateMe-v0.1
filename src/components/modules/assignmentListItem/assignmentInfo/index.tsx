@@ -1,10 +1,13 @@
-// import { MdDateRange } from "react-icons/md";
-// import { IoTimeSharp, IoLocationSharp } from "react-icons/io5";
-// import { TbPigMoney } from "react-icons/tb";
 import { formatIsoDateToDMHM } from "@/helpers/dateConverter";
 import { useTranslations } from "next-intl";
 import s from "./index.module.scss";
 import cl from "classnames";
+import {
+  IconDate,
+  IconLocation,
+  IconPigMoney,
+  IconTime,
+} from "@/components/svgs";
 
 const AssignmentInfo = ({
   assignment_date,
@@ -19,26 +22,37 @@ const AssignmentInfo = ({
   const country = tCommon(`countries.${country_id}`);
   const city = tCommon(`cities.${city_id}`);
 
-  return (
-    <div className={cl(s.info, className)}>
-      <div className={s.infoItem}>
-        {/* <MdDateRange /> */}
-        {asDay}
-      </div>
-      <div className={s.infoItem}>
-        {/* <IoTimeSharp /> */}
-        {asTime}
-      </div>
-      <div className={s.infoItem}>
-        {/* <IoLocationSharp /> */}
-        {country} {city}
-      </div>
-      <div className={cl(s.infoItem, s.infoItemWorth)}>
-        {/* <TbPigMoney style={{ fontSize: "1.1rem" }} /> */}
-        {worthCount} $
-      </div>
+  const infoData = [
+    {
+      id: country,
+      text: `${country} ${city}`,
+      icon: <IconLocation className={s.infoItemIconLocation} />,
+    },
+    {
+      id: asDay,
+      text: asDay,
+      icon: <IconDate className={s.infoItemIconDate} />,
+    },
+    {
+      id: asTime,
+      text: asTime,
+      icon: <IconTime className={s.infoItemIconTime} />,
+    },
+    {
+      id: worthCount,
+      text: `${worthCount} $`,
+      icon: <IconPigMoney className={s.infoItemIconWorth} />,
+    },
+  ];
+
+  const mapInfoData = infoData.map((e) => (
+    <div key={e.id} className={s.infoItem}>
+      <span className={s.infoItemIcon}>{e.icon}</span>
+      <span className={s.infoItemText}> {e.text}</span>
     </div>
-  );
+  ));
+
+  return <div className={cl(s.info, className)}>{mapInfoData}</div>;
 };
 
 export default AssignmentInfo;

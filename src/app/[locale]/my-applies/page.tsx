@@ -2,6 +2,7 @@
 
 import s from "./index.module.scss";
 import { useGetAssignmentsByCandidateIDQuery } from "@/app/api/clientRequests/candidates/candidates.api";
+import { Section } from "@/components";
 import { AssignmentShortListItem } from "@/components/modules";
 // import { Preloader} from "@/components";
 import { Link } from "@/navigation";
@@ -39,8 +40,8 @@ export default function MyApplies() {
     return <div>Loading</div>;
   }
   return (
-    <div className={s.listWrapper}>
+    <Section>
       <ul className={s.list}>{assignments}</ul>
-    </div>
+    </Section>
   );
 }

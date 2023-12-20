@@ -107,15 +107,3 @@ align-items: center;
 }
 
 
-
-@keyframes slideFromLeft {
-  0% {
-    transform: translateX(-100%);
-    left: 10px;
-  }
-  100% {
-    transform: translateX(0);
-    left: -5px;
-    // opacity: 1;
-  }
-}

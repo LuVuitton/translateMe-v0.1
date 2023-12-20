@@ -1,0 +1,17 @@
+@import "../../../../style/variables.module.scss";
+.about {
+  &Head {
+    &Description {
+      color: $greyText;
+      margin-bottom: 2rem;
+    }
+  }
+  &Form {
+    &Input {
+        margin-bottom: 2rem;
+    }
+    &Btn {
+      display: inline-block;
+    }
+  }
+}

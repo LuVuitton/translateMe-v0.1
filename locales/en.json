@@ -154,13 +154,15 @@
 
   "editProfile": {
     "backBtn": "back to options",
-    "options": {
-      "updateLocationAndAboutMe": "update location and about me",
-
-      "updateMyLanguages": "update my languages",
-
-      "updateMyContacts": "update my contacts"
-    }
+    "updateLocation": "My Location",
+    "updateLocationDecs": "Here you can add or update your location. The initial list on the orders page will be based on the location specified in your profile. However, you can still search for orders from other cities by using filters on the orders page.",
+    "updateAboutMe": "About Me",
+    "updateAboutMeDecs": "Here you can describe your previous experience as a translator, if any, where you learned languages, and where you have already used your language skills. There are no limitations. This information will be helpful in choosing among candidates with similar characteristics.",
+    "updateMyLanguages": "My Languages",
+    "updateMyLanguagesDesc": "Here you can add the languages you speak and your proficiency level. Additionally, you can take a language proficiency test to confirm your skills. Upon completion of the test, a badge will appear next to the language indicating that you have validated your abilities. This significantly increases your chances of getting the job.",
+    "updateMyContacts": "My Contacts",
+    "updateMyContactsDesc": "Here you can add any contact information through which you can be reached. By default, your contacts are hidden from other users, they only become visible to the client of the job you've applied for and are hidden again once the order is completed.",
+    "chooseOption": "Select the section you want to edit."
   },
 
   "candidates": {
@@ -174,10 +176,9 @@
     "isExecutor": "is executor",
     "openFullProfile": "Open full profile",
 
-     "underReview": "Your request is still under review",
-     "anotherCandidate":"Another candidate has been selected",
-     "youAreExecutor":"You have been selected as the executor"
-
+    "underReview": "Your request is still under review",
+    "anotherCandidate": "Another candidate has been selected",
+    "youAreExecutor": "You have been selected as the executor"
   },
   "createdByMe": {
     "status": "status",

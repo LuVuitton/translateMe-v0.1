@@ -1,4 +1,4 @@
-@import '../../../../style/variables.module.scss';
+@import "../../../../style/variables.module.scss";
 
 .info {
   font-size: $textMedium;
@@ -12,14 +12,34 @@
     gap: 12px;
   }
 
-
   &Item {
     display: flex;
     align-items: center;
     gap: 5px;
 
-    &Worth {
+    &:last-child {
       color: $green;
+    }
+
+    &Icon {
+      fill: currentColor;
+      position: relative;
+      top: -2px;
+      font-size: 1.1rem;
+      &Date {
+        font-size: 1rem;
+      }
+      &Location {
+        position: relative;
+        font-size: 1rem;
+      }
+      &Worth {
+        position: relative;
+        top: -1px;
+        font-size: 1.2rem;
+      }
+    }
+    &Text {
     }
   }
 }

@@ -1,42 +1,77 @@
-@import '../../../../style/variables.module.scss';
+@import "../../../../style/variables.module.scss";
 
-.mainWrapper {
-  height: calc(100vh - 55px);
-  color: $white;
+.option {
+  display: flex;
+  height: 100%;
+  padding: 20px;
 
-  .container {
+  &Item {
+    flex: 1;
     display: flex;
-    height: 100%;
-    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
 
-    .option {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 10px;
+    @media screen and (max-width: $sizeMB) {
+      padding: 1rem;
+    }
 
+    &Title {
+      margin-bottom: 25px;
+    }
+    &Icon {
+      font-size: 2rem;
+      color: $greyText;
+      margin-bottom: 2rem;
+
+      &Location {
+        fill: currentColor;
+      }
+      &Lang {
+      }
+      &Phone {
+        font-size: 2.3rem;
+      }
+    }
+    &Description {
+      font-size: $textMedium;
+      color: $greyText;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid $line;
+    }
+
+    &:hover {
+      background-color: $greyHover;
+    }
+
+    @media screen and (max-width: $sizeTB) {
       &:not(:last-child) {
-        border-right: 1px solid $grey; /* Добавление бордера справа для всех, кроме последней option */
-      }
-
-      &:hover {
-        background-color: rgba(0, 128, 0, 0.101);
-      }
-
-      @media screen and (max-width: 800px) {
-        &:not(:last-child) {
-          border-right: none; /* Убирать бордер справа при max-width: 800px */
-          border-bottom: 1px solid $grey; /* Добавление бордера снизу при max-width: 800px */
-        }
-        
-       
+        border-right: none;
+        border-bottom: 1px solid $line;
       }
     }
+  }
 
-    @media screen and (max-width: 800px) {
-      flex-direction: column;
-    }
+  @media screen and (max-width: $sizeTB) {
+    flex-direction: column;
+  }
+}
+
+.description {
+  color: $greyText;
+  font-size: 2rem;
+  padding: 3rem;
+  margin-bottom: 1rem;
+
+  &Icon {
+    font-size: 2.5rem;
+    position: relative;
+    top: 1px;
+  }
+  @media screen and (max-width: $sizeMB) {
+    font-size: 1.5rem;
   }
 }

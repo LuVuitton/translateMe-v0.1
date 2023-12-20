@@ -1,13 +1,8 @@
-@import "../../../style/variables.module.scss";
-.listWrapper {
-  display: flex;
-  justify-content: center;
-  .list {
-    max-width: 70vw;
-    padding: 1rem;
-    &Item {
+.list {
+  max-width: 70vw;
 
-    }
+  @media screen and (max-width: 600px) {
+    max-width: none;
   }
 }
  
